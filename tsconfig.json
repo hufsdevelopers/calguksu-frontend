@@ -10,7 +10,9 @@
       "@/libs/*": ["libs/*"],
       "@/types/*": ["types/*"],
       "@/styles/*": ["styles/*"],
-      "@/containers/*": ["containers/*"]
+      "@/containers/*": ["containers/*"],
+      "@/stores/*": ["stores/*"],
+      "@/hooks/*": ["hooks/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,

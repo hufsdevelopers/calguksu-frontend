@@ -15,16 +15,10 @@ export default function Header() {
       >
         <Link variant="branding" href="/">
           <Flex alignItems="end" userSelect="none" draggable="false">
-            <Heading as="h1" mb="-1px" fontFamily="branding" fontWeight="extrabold" fontSize="1.3rem">
-              Calendar&nbsp;
+            <Heading as="h1" variant="branding" fontFamily="branding" fontWeight="extrabold" fontSize="1.3rem">
+              CALGUKSU
             </Heading>
-            <Text fontFamily="branding" fontSize="0.8rem">
-              by hufsdevelopers.
-            </Text>
           </Flex>
-        </Link>
-        <Link href="webcal://ririnto.asuscomm.com:8082/home.ics" variant="button">
-          구독하기
         </Link>
       </Box>
     </Box>

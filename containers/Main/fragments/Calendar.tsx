@@ -3,7 +3,7 @@ import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 
 export default function Calendar() {
   return (
-    <Box as="section">
+    <Box as="section" maxW="container.lg" mx="auto" my={12} px={6}>
       <Divider />
       <Flex py={2} alignItems="center" justifyContent="space-between">
         <Text as="span" variant="calendarNormal">
@@ -32,19 +32,23 @@ export default function Calendar() {
           SAT
         </Text>
       </Grid>
-      <Grid
-        templateColumns="repeat(7, 1fr)"
-        my={12}
-        gap={3}
-        sx={{ hr: { borderColor: 'dark.700', borderWidth: '1px' } }}
-      >
+      <Grid templateColumns="repeat(7, 1fr)" my={12} sx={{ hr: { borderColor: 'dark.700', borderWidth: '1px' } }}>
         <Box>
           <Divider />
           <Text fontSize="2rem" fontFamily="branding" color="dark.900">
             01
           </Text>
+          <Text wordBreak="keep-all">제1학기 중간성적 입력 및 확인</Text>
+          <Divider />
         </Box>
         <Box>
+          <Divider />
+          <Text fontSize="2rem" fontFamily="branding" color="dark.900">
+            02
+          </Text>
+          <Text visibility="collapse" wordBreak="keep-all">
+            제1학기 중간성적 입력 및 확인
+          </Text>
           <Divider />
         </Box>
         <Box>

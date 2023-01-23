@@ -30,8 +30,16 @@ const customTheme = extendTheme({
     Heading: {
       baseStyle: {
         color: 'dark.900',
-        fontSize: '2xl',
-        fontWeight: 'black',
+        fontWeight: 'bold',
+        '.chakra-ui-dark &': {
+          color: 'white',
+        },
+      },
+      variants: {
+        branding: {
+          fontSize: '2xl',
+          fontWeight: 'black',
+        },
       },
     },
     Text: {
@@ -41,7 +49,7 @@ const customTheme = extendTheme({
         lineHeight: '1.75',
         transition: 'all 0.3s ease-in-out',
         '.chakra-ui-dark &': {
-          color: 'dark.200',
+          color: 'white',
         },
       },
       variants: {
@@ -111,11 +119,35 @@ const customTheme = extendTheme({
       },
     },
   },
-  layerStyles: {},
+  layerStyles: {
+    button: {
+      width: 'fit-content',
+      mt: '8',
+      py: '4',
+      px: '12',
+      fontSize: '1.1rem',
+      fontWeight: 'bold',
+      borderRadius: 'full',
+      transition: 'all 0.15s ease-in-out',
+      bgColor: 'dark.300',
+      _hover: {
+        bg: 'dark.400',
+      },
+      '.chakra-ui-dark &': {
+        bgColor: 'whiteAlpha.200',
+        _hover: {
+          bg: 'whiteAlpha.300',
+        },
+      },
+    },
+  },
   styles: {
     global: {
       body: {
         bg: 'white',
+        margin: '0',
+        padding: '0',
+        '-webkit-font-smoothing': 'antialiased',
       },
       '.chakra-ui-dark': {
         bg: 'dark.900',

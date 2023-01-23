@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Calendar from '@/containers/Main/fragments/Calendar';
+import Introduce from '@/containers/Main/fragments/Introduce';
 
 export default function Main() {
   return (
     <>
-      <Calendar />
+      <Introduce />
     </>
   );
 }

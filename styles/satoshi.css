@@ -2,7 +2,7 @@
   font-family: 'Satoshi';
   font-weight: 400;
   font-display: swap;
-  src: url('https://cdn.jsdelivr.net/gh/hufsdevelopers/calendar-front/public/assets/satoshi/Satoshi-Regular.woff')
+  src: url('https://cdn.jsdelivr.net/gh/hufsdevelopers/calendar-frontend/public/assets/satoshi/Satoshi-Regular.woff')
     format('woff');
 }
 
@@ -10,7 +10,7 @@
   font-family: 'Satoshi';
   font-weight: 500;
   font-display: swap;
-  src: url('https://cdn.jsdelivr.net/gh/hufsdevelopers/calendar-front/public/assets/satoshi/Satoshi-Medium.woff')
+  src: url('https://cdn.jsdelivr.net/gh/hufsdevelopers/calendar-frontend/public/assets/satoshi/Satoshi-Medium.woff')
     format('woff');
 }
 
@@ -18,7 +18,7 @@
   font-family: 'Satoshi';
   font-weight: 700;
   font-display: swap;
-  src: url('https://cdn.jsdelivr.net/gh/hufsdevelopers/calendar-front/public/assets/satoshi/Satoshi-Bold.woff')
+  src: url('https://cdn.jsdelivr.net/gh/hufsdevelopers/calendar-frontend/public/assets/satoshi/Satoshi-Bold.woff')
     format('woff');
 }
 
@@ -26,6 +26,6 @@
   font-family: 'Satoshi';
   font-weight: 800;
   font-display: swap;
-  src: url('https://cdn.jsdelivr.net/gh/hufsdevelopers/calendar-front/public/assets/satoshi/Satoshi-Black.woff')
+  src: url('https://cdn.jsdelivr.net/gh/hufsdevelopers/calendar-frontend/public/assets/satoshi/Satoshi-Black.woff')
     format('woff');
 }
