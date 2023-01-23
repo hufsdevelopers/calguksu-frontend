@@ -13,7 +13,7 @@ export default function Layout({ title, description, children }: LayoutProps) {
   return (
     <>
       <Header />
-      <Box as="main" paddingTop={28}>
+      <Box as="main" h="100%" py={20}>
         {children}
       </Box>
     </>

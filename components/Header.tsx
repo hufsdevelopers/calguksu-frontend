@@ -3,13 +3,13 @@ import Link from '@/components/Link';
 
 export default function Header() {
   return (
-    <Box as="nav" position="fixed" w="100%">
+    <Box as="header" position="fixed" w="100%">
       <Box
         display="flex"
         mx="auto"
         px={6}
         maxW="container.lg"
-        h={28}
+        h={20}
         alignItems="center"
         justifyContent="space-between"
       >

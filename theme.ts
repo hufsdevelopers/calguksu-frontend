@@ -123,7 +123,7 @@ const customTheme = extendTheme({
     button: {
       width: 'fit-content',
       mt: '8',
-      py: '4',
+      py: '3',
       px: '12',
       fontSize: '1.1rem',
       fontWeight: 'bold',
@@ -131,32 +131,52 @@ const customTheme = extendTheme({
       transition: 'all 0.15s ease-in-out',
       bgColor: 'dark.300',
       _hover: {
-        bg: 'dark.400',
+        bgColor: 'dark.400',
       },
       '.chakra-ui-dark &': {
         bgColor: 'whiteAlpha.200',
         _hover: {
-          bg: 'whiteAlpha.300',
+          bgColor: 'whiteAlpha.300',
         },
+      },
+    },
+    selectDialog: {
+      bgColor: 'white',
+      '.chakra-ui-dark &': {
+        bgColor: 'dark.800',
       },
     },
   },
   styles: {
     global: {
+      html: {
+        height: '100%',
+      },
       body: {
-        bg: 'white',
+        height: '100%',
         margin: '0',
         padding: '0',
-        '-webkit-font-smoothing': 'antialiased',
+        fontSmooth: 'antialiased',
+        bg: 'white',
+      },
+      header: {
+        zIndex: 'docked',
+        bg: 'white',
+        '.chakra-ui-dark &': {
+          bg: 'dark.900',
+        },
       },
       '.chakra-ui-dark': {
         bg: 'dark.900',
       },
       '*::selection': {
-        background: 'blackAlpha.200',
+        bg: 'blackAlpha.200',
         '.chakra-ui-dark &': {
-          background: 'whiteAlpha.300',
+          bg: 'whiteAlpha.300',
         },
+      },
+      '#__next': {
+        height: '100%',
       },
     },
   },

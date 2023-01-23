@@ -14,11 +14,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <NextNProgress height={3} color="RGBA(0, 0, 0, 0.64)" options={{ showSpinner: false }} />
-      <ChakraProvider resetCSS={true} theme={customTheme}>
-        <Provider dialogStore={dialogStore}>
+      <Provider dialogStore={dialogStore}>
+        <ChakraProvider resetCSS={true} theme={customTheme}>
           <Component {...pageProps} />
-        </Provider>
-      </ChakraProvider>
+        </ChakraProvider>
+      </Provider>
     </>
   );
 }
