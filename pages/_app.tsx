@@ -5,7 +5,7 @@ import DialogStore from '@/stores/dialogStore';
 
 import NextNProgress from 'nextjs-progressbar';
 import customTheme from '@/config/theme';
-import 'pretendard/dist/web/static/pretendard-dynamic-subset.css';
+import 'pretendard/dist/web/static/pretendard.css';
 import '@/styles/satoshi.css';
 
 const dialogStore = new DialogStore();
