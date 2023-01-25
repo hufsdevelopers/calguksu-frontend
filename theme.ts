@@ -118,6 +118,13 @@ const customTheme = extendTheme({
         borderColor: 'dark.300',
       },
     },
+    Select: {
+      borderColor: 'dark.100',
+      shadow: 'none',
+      _hover: {
+        borderColor: 'dark.800',
+      },
+    },
   },
   layerStyles: {
     button: {
@@ -144,6 +151,23 @@ const customTheme = extendTheme({
       bgColor: 'white',
       '.chakra-ui-dark &': {
         bgColor: 'dark.800',
+      },
+    },
+    dialogButton: {
+      display: 'flex',
+      h: '10',
+      mt: '4',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: 'md',
+      bgColor: 'dark.300',
+      transition: 'all 0.2s ease-in-out',
+      _hover: { bgColor: 'dark.400' },
+      '.chakra-ui-dark &': {
+        bgColor: 'whiteAlpha.200',
+        _hover: {
+          bgColor: 'whiteAlpha.300',
+        },
       },
     },
   },
@@ -177,6 +201,9 @@ const customTheme = extendTheme({
       },
       '#__next': {
         height: '100%',
+      },
+      'input:focus, select:focus, option:focus, textarea:focus, button:focus': {
+        outline: 'none',
       },
     },
   },
