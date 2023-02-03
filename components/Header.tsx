@@ -13,7 +13,7 @@ export default function Header() {
         alignItems="center"
         justifyContent="space-between"
       >
-        <Link variant="branding" href="/">
+        <Link href="/" variant="branding">
           <Flex alignItems="end" userSelect="none" draggable="false">
             <Heading as="h1" variant="branding" fontFamily="branding" fontWeight="extrabold" fontSize="1.3rem">
               CALGUKSU

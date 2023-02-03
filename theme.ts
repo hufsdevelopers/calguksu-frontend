@@ -72,6 +72,25 @@ const customTheme = extendTheme({
           fontSize: '0.85rem',
           userSelect: 'none',
         },
+        dialogButton: {
+          display: 'flex',
+          h: '10',
+          mt: '4',
+          color: 'dark.800',
+          fontWeight: 'bold',
+          alignItems: 'center',
+          justifyContent: 'center',
+          borderRadius: 'md',
+          bgColor: 'dark.300',
+          transition: 'all 0.2s ease-in-out',
+          _hover: { bgColor: 'dark.400' },
+          '.chakra-ui-dark &': {
+            bgColor: 'whiteAlpha.200',
+            _hover: {
+              bgColor: 'whiteAlpha.300',
+            },
+          },
+        },
       },
     },
     Link: {
@@ -81,10 +100,14 @@ const customTheme = extendTheme({
         textDecoration: 'none',
         transition: 'all 0.15s ease-in-out',
         _hover: {
+          color: 'dark.700',
           textDecoration: 'none',
         },
         '.chakra-ui-dark &': {
           color: 'whiteAlpha.800',
+          _hover: {
+            color: 'whiteAlpha.600',
+          },
         },
       },
       variants: {
@@ -94,35 +117,11 @@ const customTheme = extendTheme({
             opacity: 0.7,
           },
         },
-        button: {
-          display: 'flex',
-          h: '10',
-          minW: '10',
-          px: '5',
-          fontSize: 'md',
-          fontWeight: 'semibold',
-          lineHeight: '1.2',
-          verticalAlign: 'middle',
-          alignItems: 'center',
-          justifyContent: 'center',
-          borderRadius: '2xl',
-          bg: 'dark.200',
-          _hover: {
-            bg: 'dark.300',
-          },
-        },
       },
     },
     Divider: {
       baseStyle: {
         borderColor: 'dark.300',
-      },
-    },
-    Select: {
-      borderColor: 'dark.100',
-      shadow: 'none',
-      _hover: {
-        borderColor: 'dark.800',
       },
     },
   },
@@ -151,23 +150,6 @@ const customTheme = extendTheme({
       bgColor: 'white',
       '.chakra-ui-dark &': {
         bgColor: 'dark.800',
-      },
-    },
-    dialogButton: {
-      display: 'flex',
-      h: '10',
-      mt: '4',
-      alignItems: 'center',
-      justifyContent: 'center',
-      borderRadius: 'md',
-      bgColor: 'dark.300',
-      transition: 'all 0.2s ease-in-out',
-      _hover: { bgColor: 'dark.400' },
-      '.chakra-ui-dark &': {
-        bgColor: 'whiteAlpha.200',
-        _hover: {
-          bgColor: 'whiteAlpha.300',
-        },
       },
     },
   },

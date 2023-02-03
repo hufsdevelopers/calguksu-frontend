@@ -1,4 +1,4 @@
-import NextImage from 'next/image';
+import NextImage from 'next/legacy/image';
 import { Grid, Flex, Box, Text, Heading } from '@chakra-ui/react';
 import useStore from '@/hooks/useStore';
 
@@ -7,7 +7,6 @@ export default function Introduce() {
 
   return (
     <Grid
-      as="section"
       templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}
       maxW="container.lg"
       h="100%"
@@ -16,10 +15,10 @@ export default function Introduce() {
       pt={{ base: 6, md: 0 }}
       gap={{ base: 8, md: 0 }}
     >
-      <Flex flexDirection="column" justifyContent="center" gap="8px">
+      <Flex as="section" flexDirection="column" justifyContent="center" gap="8px">
         <Flex flexDirection="column" ml="-2px" gap="2px">
           <Heading display="inline-block" fontWeight="normal">
-            일일이 홈페이지에
+            매번 홈페이지에
           </Heading>
           <Heading>접속하는건 귀찮으니까요.</Heading>
         </Flex>
@@ -28,11 +27,12 @@ export default function Introduce() {
           시작하기
         </Box>
       </Flex>
-      <Flex pos="relative" w="100%" minH={80} alignItems="center" justifyContent="center">
+      <Flex as="section" pos="relative" w="100%" minH={80} alignItems="center" justifyContent="center">
         <NextImage
           src="/assets/images/laptop-boy.png"
-          fill
+          layout="fill"
           objectFit="contain"
+          priority={true}
           alt="Laptop Boy Image"
           draggable={false}
           style={{ userSelect: 'none', pointerEvents: 'none' }}

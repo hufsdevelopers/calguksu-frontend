@@ -13,7 +13,7 @@ const dialogStore = new DialogStore();
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <NextNProgress height={3} color="RGBA(0, 0, 0, 0.64)" options={{ showSpinner: false }} />
+      <NextNProgress height={3} color="#57BBF5" options={{ showSpinner: false }} />
       <Provider dialogStore={dialogStore}>
         <ChakraProvider resetCSS={true} theme={customTheme}>
           <Component {...pageProps} />
