@@ -10,12 +10,13 @@ import 'pretendard/dist/web/static/pretendard.css';
 import '@/styles/satoshi.css';
 
 const selectDialogStore = new SelectDialogStore();
+const previewDialogStore = new PreviewDialogStore();
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <NextNProgress height={3} color="#F8DF00" options={{ showSpinner: false }} />
-      <Provider selectDialogStore={selectDialogStore} PreviewDialogStore={PreviewDialogStore}>
+      <Provider selectDialogStore={selectDialogStore} previewDialogStore={previewDialogStore}>
         <ChakraProvider resetCSS={true} theme={customTheme}>
           <Component {...pageProps} />
         </ChakraProvider>

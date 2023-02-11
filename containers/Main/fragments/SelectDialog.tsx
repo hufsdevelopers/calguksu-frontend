@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
+import useAxios from 'axios-hooks';
 
 import useStore from '@/hooks/useStore';
-import axios from 'axios';
 import { observer } from 'mobx-react';
 
 import {
@@ -15,28 +15,28 @@ import {
 } from '@chakra-ui/react';
 import Link from '@/components/Link';
 
-import { CalendarType } from '@/config/types';
+import { CalendarProps } from '@/config/types';
 
 export default observer(function SelectDialog() {
-  const [calendars, setCalendars] = useState<CalendarType[]>(Array());
+  const [{ data, loading, error }] = useAxios<CalendarProps[]>('https://api.calguksu.com/calendars');
+
+  const [calendars, setCalendars] = useState<CalendarProps[]>([]);
   const [selectValue, setSelectValue] = useState<String | null>(null);
-  const { dialogStore } = useStore();
+  const { selectDialogStore } = useStore();
   const cancelRef = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
-    axios
-      .get<CalendarType[]>('/api/calendars')
-      .then(({ data }) => {
-        setCalendars(data);
-        setSelectValue(data[0].name);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  if (!loading && !error && data && calendars.length == 0) {
+    setCalendars(data);
+    setSelectValue(data[0].name);
+  }
 
   return (
-    <AlertDialog isOpen={dialogStore.isClicked} leastDestructiveRef={cancelRef} onClose={dialogStore.click} isCentered>
+    <AlertDialog
+      isOpen={selectDialogStore.isClicked}
+      leastDestructiveRef={cancelRef}
+      onClose={selectDialogStore.click}
+      isCentered
+    >
       <AlertDialogOverlay>
         <AlertDialogContent layerStyle="selectDialog" maxW="xl" p={8} mx={6}>
           <AlertDialogCloseButton borderRadius="full" />
@@ -52,6 +52,7 @@ export default observer(function SelectDialog() {
             onChange={(e) => {
               setSelectValue(e.target.value);
             }}
+            sx={{ option: { '.chakra-ui-dark &': { bg: 'dark.700' } } }}
           >
             {calendars.length > 0 &&
               calendars.map((calendar) => (
@@ -60,15 +61,10 @@ export default observer(function SelectDialog() {
                 </option>
               ))}
           </Select>
-          {selectValue ? (
-            <Link href={`/calendar/${selectValue}`}>
-              <Text variant="dialogButton" onClick={dialogStore.click}>
-                구독하기
-              </Text>
-            </Link>
-          ) : (
+          {error ? (
             <Text
-              variant="dialogButton"
+              mt={4}
+              variant="buttonRadiusMd"
               color="dark.500"
               _hover={{ bgColor: 'dark.300' }}
               sx={{
@@ -81,8 +77,32 @@ export default observer(function SelectDialog() {
                 },
               }}
             >
-              새로고침 후 다시 시도해주세요
+              🤯 오류가 발생했어요.
             </Text>
+          ) : loading ? (
+            <Text
+              mt={4}
+              variant="buttonRadiusMd"
+              color="dark.500"
+              _hover={{ bgColor: 'dark.300' }}
+              sx={{
+                '.chakra-ui-dark &': {
+                  color: 'whiteAlpha.500',
+                  bgColor: 'whiteAlpha.200',
+                  _hover: {
+                    bgColor: 'whiteAlpha.200',
+                  },
+                },
+              }}
+            >
+              ⌛ 캘린더 가져오는 중 ...
+            </Text>
+          ) : (
+            <Link href={`/calendar/${selectValue}`}>
+              <Text mt={4} variant="buttonRadiusMd" onClick={selectDialogStore.click}>
+                🧑‍🍳 이 캘린더를 조리할게요!
+              </Text>
+            </Link>
           )}
           <Text mt={6} textAlign="center" fontSize="sm">
             원하는 캘린더가 없으신가요? <Link href="">여기</Link>를 눌러 제보해주세요!

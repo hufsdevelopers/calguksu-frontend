@@ -1,4 +1,4 @@
-export interface CalendarType {
+export interface CalendarProps {
   name: string;
   title: string;
   description: string;

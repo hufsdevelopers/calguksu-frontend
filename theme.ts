@@ -136,6 +136,7 @@ const customTheme = extendTheme({
       px: '12',
       fontSize: '1.1rem',
       fontWeight: 'bold',
+      outline: 'none',
       borderRadius: 'full',
       transition: 'all 0.15s ease-in-out',
       bgColor: 'primary.normal',

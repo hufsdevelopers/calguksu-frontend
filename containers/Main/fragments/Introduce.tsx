@@ -3,7 +3,7 @@ import { Grid, Flex, Box, Text, Heading } from '@chakra-ui/react';
 import useStore from '@/hooks/useStore';
 
 export default function Introduce() {
-  const { dialogStore } = useStore();
+  const { selectDialogStore } = useStore();
 
   return (
     <Grid
@@ -20,10 +20,10 @@ export default function Introduce() {
           <Heading display="inline-block" fontWeight="normal">
             매번 홈페이지에
           </Heading>
-          <Heading>접속하는건 귀찮으니까요.</Heading>
+          <Heading>접속하는건 귀찮으니까요</Heading>
         </Flex>
         <Text fontSize="1.1rem">칼국수닷컴에서 원하는 캘린더를 구독해보세요!</Text>
-        <Box as="button" layerStyle="button" onClick={dialogStore.click}>
+        <Box as="button" layerStyle="button" onClick={selectDialogStore.click}>
           시작하기
         </Box>
       </Flex>

@@ -4,10 +4,10 @@ import axios from 'axios';
 import Layout from '@/components/Layout';
 import Calendar from '@/containers/Calendar';
 
-import { CalendarType } from '@/config/types';
+import { CalendarProps } from '@/config/types';
 
 interface PageProps {
-  calendar: CalendarType;
+  calendar: CalendarProps;
 }
 
 export default function CalendarPage({ calendar }: PageProps) {
@@ -25,7 +25,7 @@ export default function CalendarPage({ calendar }: PageProps) {
 
 export async function getServerSideProps(context: NextPageContext) {
   const { name } = context.query;
-  const response = await axios.get<CalendarType>(`https://api.hufsdevelopers.org/calguksu/calendars/${name}`);
+  const response = await axios.get<CalendarProps>(`https://api.calguksu.com/calendars/${name}`);
 
   return {
     props: {

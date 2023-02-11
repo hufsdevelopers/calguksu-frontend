@@ -16,7 +16,7 @@ export default function Header() {
         <Link href="/" variant="branding">
           <Flex alignItems="end" userSelect="none" draggable="false">
             <Heading as="h1" variant="branding" fontFamily="branding" fontWeight="extrabold" fontSize="1.3rem">
-              CALGUKSU
+              CALGUKSU.COM
             </Heading>
           </Flex>
         </Link>
