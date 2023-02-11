@@ -13,6 +13,10 @@ const customTheme = extendTheme({
     body: '-apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Pretendard, Roboto, Noto Sans KR, Segoe UI, Malgun Gothic, sans-serif',
   },
   colors: {
+    primary: {
+      normal: '#F8DF00',
+      press: '#DFC800',
+    },
     dark: {
       50: '#FAFAFA',
       100: '#F5F5F5',
@@ -72,10 +76,9 @@ const customTheme = extendTheme({
           fontSize: '0.85rem',
           userSelect: 'none',
         },
-        dialogButton: {
+        buttonRadiusMd: {
           display: 'flex',
           h: '10',
-          mt: '4',
           color: 'dark.800',
           fontWeight: 'bold',
           alignItems: 'center',
@@ -135,9 +138,9 @@ const customTheme = extendTheme({
       fontWeight: 'bold',
       borderRadius: 'full',
       transition: 'all 0.15s ease-in-out',
-      bgColor: 'dark.300',
+      bgColor: 'primary.normal',
       _hover: {
-        bgColor: 'dark.400',
+        bgColor: 'primary.press',
       },
       '.chakra-ui-dark &': {
         bgColor: 'whiteAlpha.200',
