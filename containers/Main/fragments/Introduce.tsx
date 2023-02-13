@@ -15,7 +15,7 @@ export default function Introduce() {
       pt={{ base: 6, md: 0 }}
       gap={{ base: 8, md: 0 }}
     >
-      <Flex as="section" flexDirection="column" justifyContent="center" gap="8px">
+      <Flex flexDirection="column" justifyContent="center" gap="8px">
         <Flex flexDirection="column" ml="-2px" gap="2px">
           <Heading display="inline-block" fontWeight="normal">
             매번 홈페이지에
@@ -23,11 +23,11 @@ export default function Introduce() {
           <Heading>접속하는건 귀찮으니까요</Heading>
         </Flex>
         <Text fontSize="1.1rem">칼국수닷컴에서 원하는 캘린더를 구독해보세요!</Text>
-        <Box as="button" layerStyle="button" onClick={selectDialogStore.click}>
+        <Box as="button" layerStyle="button" onClick={selectDialogStore.show}>
           시작하기
         </Box>
       </Flex>
-      <Flex as="section" pos="relative" w="100%" minH={80} alignItems="center" justifyContent="center">
+      <Flex pos="relative" w="100%" minH={80} alignItems="center" justifyContent="center">
         <NextImage
           src="/assets/images/laptop-boy.png"
           layout="fill"

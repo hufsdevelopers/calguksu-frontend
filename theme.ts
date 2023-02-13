@@ -57,25 +57,6 @@ const customTheme = extendTheme({
         },
       },
       variants: {
-        calendarNormal: {
-          display: 'flex',
-          color: 'dark.500',
-          fontFamily: 'branding',
-          alignItems: 'center',
-          cursor: 'pointer',
-          gap: 2,
-          userSelect: 'none',
-        },
-        calendarCurrent: {
-          color: 'dark.900',
-          fontFamily: 'branding',
-          fontWeight: 500,
-          userSelect: 'none',
-        },
-        calendarDay: {
-          fontSize: '0.85rem',
-          userSelect: 'none',
-        },
         buttonRadiusMd: {
           display: 'flex',
           h: '10',
@@ -144,10 +125,7 @@ const customTheme = extendTheme({
         bgColor: 'primary.press',
       },
       '.chakra-ui-dark &': {
-        bgColor: 'whiteAlpha.200',
-        _hover: {
-          bgColor: 'whiteAlpha.300',
-        },
+        color: 'dark.900',
       },
     },
     selectDialog: {

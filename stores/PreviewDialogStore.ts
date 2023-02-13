@@ -6,11 +6,16 @@ export default class PreivewDialogStore {
   constructor() {
     makeObservable(this, {
       isClicked: observable,
-      click: action,
+      show: action,
+      close: action,
     });
   }
 
-  click = () => {
-    this.isClicked = !this.isClicked;
+  show = () => {
+    if (!this.isClicked) this.isClicked = true;
+  };
+
+  close = () => {
+    if (this.isClicked) this.isClicked = false;
   };
 }

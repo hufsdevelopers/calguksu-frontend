@@ -5,9 +5,9 @@ import { Box, Flex, Text, Heading } from '@chakra-ui/react';
 import Link from '@/components/Link';
 import PreviewDialog from '@/containers/Calendar/fragments/PreviewDialog';
 
-import { CalendarProps } from '@/config/types';
+import { CalendarType } from '@/config/types';
 
-export default function Calendar(calendar: CalendarProps) {
+export default function Calendar(calendar: CalendarType) {
   const { previewDialogStore } = useStore();
 
   return (
@@ -30,7 +30,7 @@ export default function Calendar(calendar: CalendarProps) {
         </Flex>
         <Flex my={12} flexDirection="column" alignItems="center" gap={12}>
           <Flex flexDirection={{ base: 'column', md: 'row' }} gap={3}>
-            <Text as="button" px={12} variant="buttonRadiusMd" outline="none" onClick={previewDialogStore.click}>
+            <Text as="button" px={12} variant="buttonRadiusMd" outline="none" onClick={previewDialogStore.show}>
               미리보기
             </Text>
             <Link href={`https://api.calguksu.com/calendars/${calendar.name}/subscribe`} target="_blank">
@@ -45,7 +45,7 @@ export default function Calendar(calendar: CalendarProps) {
           동의하는 것으로 간주됩니다.
         </Text>
       </Box>
-      {calendar.name && <PreviewDialog name={calendar.name} />}
+      {calendar && <PreviewDialog name={calendar.name} title={calendar.title} />}
     </>
   );
 }
