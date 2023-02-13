@@ -5,6 +5,7 @@ import useStore from '@/hooks/useStore';
 import { observer } from 'mobx-react';
 
 import {
+  Flex,
   Text,
   Heading,
   AlertDialog,
@@ -22,12 +23,18 @@ export default observer(function SelectDialog() {
 
   const [calendars, setCalendars] = useState<CalendarType[]>([]);
   const [selectValue, setSelectValue] = useState<String | null>(null);
-  const { selectDialogStore } = useStore();
   const cancelRef = useRef<HTMLButtonElement>(null);
+
+  const { selectDialogStore, reportDialogStore } = useStore();
 
   if (!loading && !error && data && calendars.length == 0) {
     setCalendars(data);
     setSelectValue(data[0].name);
+  }
+
+  function showReportDialog() {
+    selectDialogStore.close();
+    reportDialogStore.show();
   }
 
   return (
@@ -104,9 +111,13 @@ export default observer(function SelectDialog() {
               </Text>
             </Link>
           )}
-          <Text mt={6} textAlign="center" fontSize="sm">
-            원하는 캘린더가 없으신가요? <Link href="">여기</Link>를 눌러 제보해주세요!
-          </Text>
+          <Flex mt={6} fontSize="sm" alignItems="center" justifyContent="center">
+            원하는 캘린더가 없으신가요?&nbsp;
+            <Text variant="opacity" onClick={showReportDialog}>
+              여기
+            </Text>
+            를 눌러 제보해주세요!
+          </Flex>
         </AlertDialogContent>
       </AlertDialogOverlay>
     </AlertDialog>

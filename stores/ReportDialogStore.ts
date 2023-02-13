@@ -1,6 +1,6 @@
 import { action, makeObservable, observable } from 'mobx';
 
-export default class ContectDialogStore {
+export default class ReportDialogStore {
   isClicked: Boolean = false;
 
   constructor() {

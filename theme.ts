@@ -75,6 +75,14 @@ const customTheme = extendTheme({
             },
           },
         },
+        opacity: {
+          color: 'dark.800',
+          cursor: 'pointer',
+          transition: 'all 0.15s ease-in-out',
+          _hover: {
+            opacity: 0.7,
+          },
+        },
       },
     },
     Link: {
