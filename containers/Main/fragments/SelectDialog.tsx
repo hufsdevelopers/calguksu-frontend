@@ -84,7 +84,7 @@ export default observer(function SelectDialog() {
                 },
               }}
             >
-              🤯 오류가 발생했어요.
+              🤯 오류가 발생했어요
             </Text>
           ) : loading ? (
             <Text

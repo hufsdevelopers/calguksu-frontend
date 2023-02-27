@@ -4,7 +4,6 @@ import { Provider } from 'mobx-react';
 import NextNProgress from 'nextjs-progressbar';
 import customTheme from '@/config/theme';
 import 'pretendard/dist/web/static/pretendard.css';
-import '@/styles/satoshi.css';
 
 import type { AppProps } from 'next/app';
 import SelectDialogStore from '@/stores/SelectDialogStore';

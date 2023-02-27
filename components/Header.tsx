@@ -1,4 +1,4 @@
-import { Flex, Box, Heading, Text, Button } from '@chakra-ui/react';
+import { Flex, Box, Image } from '@chakra-ui/react';
 import Link from '@/components/Link';
 
 export default function Header() {
@@ -15,9 +15,7 @@ export default function Header() {
       >
         <Link href="/" variant="branding">
           <Flex alignItems="end" userSelect="none" draggable="false">
-            <Heading as="h1" variant="branding" fontFamily="branding" fontWeight="extrabold" fontSize="1.3rem">
-              CALGUKSU.COM
-            </Heading>
+            <Image src="/assets/ic_logo.png" width="180px" height="auto" alt="Logo" />
           </Flex>
         </Link>
       </Box>
