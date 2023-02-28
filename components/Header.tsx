@@ -15,7 +15,18 @@ export default function Header() {
       >
         <Link href="/" variant="branding">
           <Flex alignItems="end" userSelect="none" draggable="false">
-            <Image src="/assets/ic_logo.png" width="180px" height="auto" alt="Logo" />
+            <Image
+              src="/assets/ic_logo.png"
+              width="180px"
+              height="auto"
+              alt="Logo"
+              sx={{
+                filter: 'none',
+                '.chakra-ui-dark &': {
+                  filter: 'invert(99%) sepia(58%) saturate(2%) hue-rotate(267deg) brightness(115%) contrast(100%)',
+                },
+              }}
+            />
           </Flex>
         </Link>
       </Box>
