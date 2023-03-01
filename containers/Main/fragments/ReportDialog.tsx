@@ -18,13 +18,13 @@ export default observer(function ReportDialog() {
   const [value, setValue] = useState('');
   const cancelRef = useRef<HTMLButtonElement>(null);
 
-  const { reportDialogStore } = useStore();
+  const { dialogStore } = useStore();
 
   return (
     <AlertDialog
-      isOpen={reportDialogStore.isClicked}
+      isOpen={dialogStore.report}
       leastDestructiveRef={cancelRef}
-      onClose={reportDialogStore.close}
+      onClose={dialogStore.reportClose}
       isCentered
     >
       <AlertDialogOverlay>

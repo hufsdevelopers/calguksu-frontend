@@ -1,9 +1,9 @@
-import NextImage from 'next/legacy/image';
+import Image from 'next/legacy/image';
 import { Grid, Flex, Box, Text, Heading } from '@chakra-ui/react';
 import useStore from '@/hooks/useStore';
 
 export default function Introduce() {
-  const { selectDialogStore } = useStore();
+  const { dialogStore } = useStore();
 
   return (
     <Grid
@@ -23,13 +23,13 @@ export default function Introduce() {
           <Heading>접속하는건 귀찮으니까요</Heading>
         </Flex>
         <Text fontSize="1.1rem">칼국수닷컴에서 원하는 캘린더를 구독해보세요!</Text>
-        <Box as="button" layerStyle="button" onClick={selectDialogStore.show}>
+        <Box as="button" layerStyle="button" onClick={dialogStore.selectShow}>
           시작하기
         </Box>
       </Flex>
       <Flex pos="relative" w="100%" minH={80} alignItems="center" justifyContent="center">
-        <NextImage
-          src="/assets/images/laptop-boy.png"
+        <Image
+          src="/assets/image_laptop_boy.png"
           layout="fill"
           objectFit="contain"
           priority={true}

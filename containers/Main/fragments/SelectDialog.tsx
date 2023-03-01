@@ -16,32 +16,32 @@ import {
 } from '@chakra-ui/react';
 import Link from '@/components/Link';
 
-import { CalendarType } from '@/config/types';
+import { CalendarListType, CalendarResultType } from '@/config/types';
 
 export default observer(function SelectDialog() {
-  const [{ data, loading, error }] = useAxios<CalendarType[]>('https://api.calguksu.com/calendars');
+  const [{ data, loading, error }] = useAxios<CalendarListType>('https://api.calguksu.com/calendars');
 
-  const [calendars, setCalendars] = useState<CalendarType[]>([]);
+  const [calendars, setCalendars] = useState<CalendarResultType[]>([]);
   const [selectValue, setSelectValue] = useState<String | null>(null);
   const cancelRef = useRef<HTMLButtonElement>(null);
 
-  const { selectDialogStore, reportDialogStore } = useStore();
+  const { dialogStore } = useStore();
 
-  if (!loading && !error && data && calendars.length == 0) {
-    setCalendars(data);
-    setSelectValue(data[0].name);
+  if (!loading && !error && data?.successful && calendars.length == 0) {
+    setCalendars(data.result);
+    setSelectValue(data?.result[0].name);
   }
 
   function showReportDialog() {
-    selectDialogStore.close();
-    reportDialogStore.show();
+    dialogStore.selectClose();
+    dialogStore.reportShow();
   }
 
   return (
     <AlertDialog
-      isOpen={selectDialogStore.isClicked}
+      isOpen={dialogStore.select}
       leastDestructiveRef={cancelRef}
-      onClose={selectDialogStore.close}
+      onClose={dialogStore.selectClose}
       isCentered
     >
       <AlertDialogOverlay>
@@ -106,7 +106,7 @@ export default observer(function SelectDialog() {
             </Text>
           ) : (
             <Link href={`/calendar/${selectValue}`}>
-              <Text mt={4} variant="buttonRadiusMd" onClick={selectDialogStore.close}>
+              <Text mt={4} variant="buttonRadiusMd" onClick={dialogStore.selectClose}>
                 🧑‍🍳 이 캘린더를 조리할게요!
               </Text>
             </Link>

@@ -1,11 +1,12 @@
 import { useRef } from 'react';
-import useAxios from 'axios-hooks';
 import useStore from '@/hooks/useStore';
 import { observer } from 'mobx-react';
 import _ from 'lodash';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
 dayjs.locale('ko');
+
+import useAxios from 'axios-hooks';
 
 import {
   Box,
@@ -18,26 +19,20 @@ import {
   Flex,
 } from '@chakra-ui/react';
 
+import { EventListType, EventResultType } from '@/config/types';
+
 interface PreviewProps {
   name: string;
   title: string;
 }
 
-interface EventType {
-  calendarName: string;
-  start: string;
-  end: string;
-  allDay: boolean;
-  description: string;
-}
-
 export default observer(function PreviewDialog({ name, title }: PreviewProps) {
-  const [{ data, loading, error }] = useAxios<EventType[]>(`https://api.calguksu.com/events?calendarName=${name}`);
+  const [{ data, loading, error }] = useAxios<EventListType>(`https://api.calguksu.com/events?calendarName=${name}`);
 
-  const { previewDialogStore } = useStore();
+  const { dialogStore } = useStore();
   const cancelRef = useRef<HTMLButtonElement>(null);
 
-  function event2element(event: EventType) {
+  function event2element(event: EventResultType) {
     const start = dayjs(event.start.replace('[Etc/UTC]', ''));
     const end = dayjs(event.end.replace('[Etc/UTC]', ''));
 
@@ -59,9 +54,9 @@ export default observer(function PreviewDialog({ name, title }: PreviewProps) {
 
   return (
     <AlertDialog
-      isOpen={previewDialogStore.isClicked}
+      isOpen={dialogStore.preview}
       leastDestructiveRef={cancelRef}
-      onClose={previewDialogStore.close}
+      onClose={dialogStore.previewClose}
       isCentered
     >
       <AlertDialogOverlay>
@@ -81,10 +76,10 @@ export default observer(function PreviewDialog({ name, title }: PreviewProps) {
               </Text>
             ) : (
               <>
-                {_.map(_.take(data, 4), (item) => event2element(item))}
+                {_.map(_.take(data?.result, 4), (item) => event2element(item))}
                 <Flex flexDirection="column" gap={1}>
-                  {data && data.length > 4 && <Text textAlign="center">. . .</Text>}
-                  <Text textAlign="center">총 {data?.length}개의 일정이 등록되어 있어요.</Text>
+                  {data?.successful && data.result.length > 4 && <Text textAlign="center">. . .</Text>}
+                  <Text textAlign="center">총 {data?.result.length}개의 일정이 등록되어 있어요.</Text>
                 </Flex>
               </>
             )}

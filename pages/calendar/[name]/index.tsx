@@ -4,32 +4,35 @@ import axios from 'axios';
 import Layout from '@/components/Layout';
 import Calendar from '@/containers/Calendar';
 
-import { CalendarType } from '@/config/types';
+import { CalendarDetailType } from '@/config/types';
 
 interface PageProps {
-  calendar: CalendarType;
+  calendar: CalendarDetailType;
 }
 
 export default function CalendarPage({ calendar }: PageProps) {
   return (
     <Layout>
-      <Calendar
-        name={calendar.name}
-        title={calendar.title}
-        description={calendar.description}
-        calendarId={calendar.calendarId}
-      />
+      <Calendar calendar={calendar} />
     </Layout>
   );
 }
 
 export async function getServerSideProps(context: NextPageContext) {
   const { name } = context.query;
-  const response = await axios.get<CalendarType>(`https://api.calguksu.com/calendars/${name}`);
-
-  return {
-    props: {
-      calendar: response.data,
-    },
-  };
+  try {
+    const response = await axios.get<CalendarDetailType>(`https://api.calguksu.com/calendars/${name}`);
+    return {
+      props: {
+        calendar: response.data,
+      },
+    };
+  } catch (error) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: '/404',
+      },
+    };
+  }
 }

@@ -73,6 +73,19 @@ const customTheme = extendTheme({
             },
           },
         },
+        buttonRadiusMdYellow: {
+          display: 'flex',
+          h: '10',
+          color: 'dark.800',
+          fontWeight: 'bold',
+          alignItems: 'center',
+          justifyContent: 'center',
+          borderRadius: 'md',
+          bgColor: 'primary.normal',
+          transition: 'all 0.2s ease-in-out',
+          _hover: { bgColor: 'primary.press' },
+          '.chakra-ui-dark &': { color: 'dark.800' },
+        },
         opacity: {
           color: 'dark.800',
           cursor: 'pointer',
@@ -174,6 +187,10 @@ const customTheme = extendTheme({
       },
       'input:focus, select:focus, option:focus, textarea:focus, button:focus': {
         outline: 'none',
+      },
+      'input[aria-invalid=true]': {
+        border: '1px solid #E53E3E !important',
+        shadow: 'none !important',
       },
     },
   },
