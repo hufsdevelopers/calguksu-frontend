@@ -22,8 +22,8 @@ export default function Error() {
         </Heading>
         <Text>다시 시도해주시고, 문제가 지속될 시 신고해주세요!</Text>
         <Link href="/" display="block" mt={6}>
-          <Text as="button" px={12} variant="buttonRadiusMd" outline="none">
-            돌아가기
+          <Text as="button" px={6} variant="buttonRadiusMd" outline="none">
+            ← 돌아가기
           </Text>
         </Link>
       </Flex>
