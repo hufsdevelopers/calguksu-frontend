@@ -42,13 +42,27 @@ export default function Calendar({ calendar }: PageProps) {
             </Text>
           </Flex>
         </Flex>
-        <Text mt={12} fontSize="xs" textAlign="center">
+        <Text mt={12} fontSize="xs" textAlign="center" wordBreak="keep-all">
           캘린더를 구독하면 칼국수닷컴의 <Link href="">서비스 약관</Link>과{' '}
           <Link href="/policies/agreement-marketing">마케팅 광고 수신</Link>에 동의하는 것으로 간주됩니다.
         </Text>
+        <Flex justifyContent="center">
+          <Link
+            href="https://www.flaticon.com/free-icons/ramen"
+            target="_blank"
+            isExternal
+            title="ramen icons"
+            display="inline-block"
+            mt={3}
+            fontSize="xs"
+            textAlign="center"
+          >
+            Ramen icons created by amonrat rungreangfangsai - Flaticon
+          </Link>
+        </Flex>
       </Box>
-      {calendar.successful && <PreviewDialog name={calendar.result.name} title={calendar.result.title} />}
-      <SubscribeDialog />
+      {calendar.successful && <PreviewDialog calendarName={calendar.result.name} title={calendar.result.title} />}
+      {calendar.successful && <SubscribeDialog calendarName={calendar.result.name} />}
     </>
   );
 }
