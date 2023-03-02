@@ -31,7 +31,7 @@ export async function getServerSideProps(context: NextPageContext) {
     return {
       redirect: {
         permanent: false,
-        destination: '/404',
+        destination: '/calendar-not-found',
       },
     };
   }

@@ -5,7 +5,7 @@ import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 export default function Error() {
   return (
     <Box maxW="container.lg" h="100%" mx="auto" px={6}>
-      <Box position="relative" h="65%" mt={3}>
+      <Box position="relative" h="65%" mt={4}>
         <Image
           src="/assets/image_error_boy.png"
           layout="fill"
@@ -20,7 +20,7 @@ export default function Error() {
         <Heading fontSize="3xl" textAlign="center">
           그럴리가 없는데... 😥
         </Heading>
-        <Text>다시 시도해주시고, 문제가 지속될 시 신고해주세요!</Text>
+        <Text>다시 시도해보시고, 문제가 지속될 시 신고해주세요!</Text>
         <Link href="/" display="block" mt={6}>
           <Text as="button" px={6} variant="buttonRadiusMd" outline="none">
             ← 돌아가기
