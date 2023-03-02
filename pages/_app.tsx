@@ -1,5 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { Provider } from 'mobx-react';
+import { DefaultSeo } from 'next-seo';
+import SEO from '@/config/seo-config';
 
 import type { AppProps } from 'next/app';
 import NextNProgress from 'nextjs-progressbar';
@@ -15,6 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <NextNProgress height={3} color="#F8DF00" options={{ showSpinner: false }} />
       <Provider dialogStore={dialogStore}>
         <ChakraProvider resetCSS={true} theme={customTheme}>
+          <DefaultSeo {...SEO} />
           <Component {...pageProps} />
         </ChakraProvider>
       </Provider>
