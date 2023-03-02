@@ -22,12 +22,14 @@ import {
 import { EventListType, EventResultType } from '@/config/types';
 
 interface PreviewProps {
-  name: string;
+  calendarName: string;
   title: string;
 }
 
-export default observer(function PreviewDialog({ name, title }: PreviewProps) {
-  const [{ data, loading, error }] = useAxios<EventListType>(`https://api.calguksu.com/events?calendarName=${name}`);
+export default observer(function PreviewDialog({ calendarName, title }: PreviewProps) {
+  const [{ data, loading, error }] = useAxios<EventListType>(
+    `https://api.calguksu.com/events?calendarName=${calendarName}`,
+  );
 
   const { dialogStore } = useStore();
   const cancelRef = useRef<HTMLButtonElement>(null);
@@ -37,7 +39,7 @@ export default observer(function PreviewDialog({ name, title }: PreviewProps) {
     const end = dayjs(event.end.replace('[Etc/UTC]', ''));
 
     return (
-      <Box>
+      <Box key={event.description}>
         <Box display="flex" my={4} py={2} px={3} boxShadow="base" borderRadius="md" flexDirection="column" gap={1}>
           <Heading fontSize="md">{event.description}</Heading>
           {event.allDay ? (
