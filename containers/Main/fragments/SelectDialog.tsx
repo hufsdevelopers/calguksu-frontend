@@ -106,17 +106,19 @@ export default observer(function SelectDialog() {
             </Text>
           ) : (
             <Link href={`/calendar/${selectValue}`}>
-              <Text mt={4} variant="buttonRadiusMd" onClick={dialogStore.selectClose}>
+              <Text mt={4} variant="buttonRadiusMdYellow" onClick={dialogStore.selectClose}>
                 🧑‍🍳 이 캘린더를 조리할게요!
               </Text>
             </Link>
           )}
-          <Flex mt={6} fontSize="sm" alignItems="center" justifyContent="center">
-            원하는 캘린더가 없으신가요?&nbsp;
-            <Text variant="opacity" onClick={showReportDialog}>
-              여기
+          <Flex alignItems="center" justifyContent="center">
+            <Text as="span" display="block" mt={6} fontSize="sm" textAlign="center" wordBreak="keep-all">
+              원하는 캘린더가 없으신가요?&nbsp;
+              <Text variant="opacity" display="inline-block" onClick={showReportDialog}>
+                <u>여기</u>
+              </Text>
+              를 눌러 제보해주세요!
             </Text>
-            를 눌러 제보해주세요!
           </Flex>
         </AlertDialogContent>
       </AlertDialogOverlay>
