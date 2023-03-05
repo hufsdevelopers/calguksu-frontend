@@ -1,5 +1,4 @@
 import { useState, useRef, ChangeEvent } from 'react';
-import useAxios from 'axios-hooks';
 
 import useStore from '@/hooks/useStore';
 import { observer } from 'mobx-react';
@@ -13,8 +12,6 @@ import {
   AlertDialogCloseButton,
   AlertDialogContent,
   AlertDialogOverlay,
-  Checkbox,
-  useCheckbox,
 } from '@chakra-ui/react';
 
 import { CalendarListType, CalendarResultType } from '@/config/types';

@@ -43,11 +43,19 @@ export default observer(function DeliveryDialog() {
         });
       })
       .catch(function (error) {
-        toast({
-          title: `${error.response.data.result}`,
-          status: 'error',
-          isClosable: false,
-        });
+        {
+          error.response
+            ? toast({
+                title: `${error.response.data.result}`,
+                status: 'error',
+                isClosable: false,
+              })
+            : toast({
+                title: `오류가 발생했어요. 잠시 후 다시 시도해주세요!`,
+                status: 'error',
+                isClosable: false,
+              });
+        }
       });
     setEmail('');
     setValid(false);

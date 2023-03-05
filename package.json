@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^2.4.8",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@lottiefiles/lottie-player": "^1.7.1",
     "@next/font": "13.1.2",
     "axios": "^1.2.4",
     "axios-hooks": "^4.0.0",
