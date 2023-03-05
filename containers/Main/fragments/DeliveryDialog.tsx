@@ -3,6 +3,7 @@ import axios from 'axios';
 import useStore from '@/hooks/useStore';
 import { observer } from 'mobx-react';
 
+import Link from '@/components/Link';
 import {
   Box,
   Text,
@@ -15,12 +16,9 @@ import {
   useToast,
 } from '@chakra-ui/react';
 
-interface subscribeProps {
-  calendarName: string;
-}
-
-export default observer(function SubscribeDialog({ calendarName }: subscribeProps) {
+export default observer(function DeliveryDialog() {
   const [email, setEmail] = useState('');
+  const [valid, setValid] = useState(false);
 
   const { dialogStore } = useStore();
   const cancelRef = useRef<HTMLButtonElement>(null);
@@ -36,7 +34,7 @@ export default observer(function SubscribeDialog({ calendarName }: subscribeProp
 
   function sendEmail() {
     axios
-      .post('https://api.calguksu.com/subscribe', { email, calendarName })
+      .post('https://api.calguksu.com/subscribe', { email, calendarName: 'hufsofficial' })
       .then(function (response) {
         toast({
           title: `메일을 확인해주세요!`,
@@ -52,30 +50,34 @@ export default observer(function SubscribeDialog({ calendarName }: subscribeProp
         });
       });
     setEmail('');
-    dialogStore.subscribeClose();
+    setValid(false);
+    dialogStore.deliveryClose();
   }
 
   return (
     <AlertDialog
-      isOpen={dialogStore.subscribe}
+      isOpen={dialogStore.delivery}
       leastDestructiveRef={cancelRef}
-      onClose={dialogStore.subscribeClose}
+      onClose={() => {
+        dialogStore.deliveryClose();
+        setValid(false);
+      }}
       isCentered
     >
       <AlertDialogOverlay>
-        <AlertDialogContent layerStyle="selectDialog" maxW="xl" p={8} mx={6}>
+        <AlertDialogContent layerStyle="selectDialog" maxW="xl" p={8} mx={6} borderRadius="18px">
           <AlertDialogCloseButton borderRadius="full" />
-          <Heading textAlign="center" fontSize="xl">
-            배달요청
-          </Heading>
-          <Box mt={6}>
+          <Heading fontSize="32px">이메일 주소 입력</Heading>
+          <Box mt="46px">
             <Input
-              _focus={{ border: '1px solid #757575', shadow: 'none' }}
+              h="60px"
+              _focus={{ border: '1px solid #F4E04B', shadow: 'none' }}
               borderWidth="1px"
               onChange={(e) => {
                 setEmail(e.target.value);
+                if (isEmail(email)) setValid(true);
               }}
-              isInvalid={!isEmail(email)}
+              isInvalid={valid && !isEmail(email)}
               placeholder="example@calguksu.com"
               type="email"
               value={email}
@@ -84,21 +86,23 @@ export default observer(function SubscribeDialog({ calendarName }: subscribeProp
               <Text
                 as="button"
                 w="100%"
-                mt={4}
+                mt="26px"
                 variant="buttonRadiusMdYellow"
                 outline="none"
+                fontSize="20px"
                 onClick={() => sendEmail()}
               >
-                🏍️ 이 주소로 배달할게요!
+                이 주소로 받을게요
               </Text>
             ) : (
               <Text
                 as="button"
                 w="100%"
-                mt={4}
+                mt="26px"
                 variant="buttonRadiusMd"
                 outline="none"
                 color="dark.500"
+                fontSize="20px"
                 _hover={{ bgColor: 'dark.300' }}
                 sx={{
                   '.chakra-ui-dark &': {
@@ -110,9 +114,20 @@ export default observer(function SubscribeDialog({ calendarName }: subscribeProp
                   },
                 }}
               >
-                🤗 주소를 입력해주세요!
+                이 주소로 받을게요
               </Text>
             )}
+            <Text mt={4} fontSize="14px" textAlign="center" wordBreak="keep-all">
+              캘린더를 구독하면 칼국수닷컴의&nbsp;
+              <Link href="/policies/privacy" target="_blank" isExternal>
+                개인정보 처리방침
+              </Link>
+              과&nbsp;
+              <Link href="/policies/agreement-marketing" target="_blank" isExternal>
+                마케팅 광고 수신
+              </Link>
+              에 동의하는 것으로 간주됩니다.
+            </Text>
           </Box>
         </AlertDialogContent>
       </AlertDialogOverlay>

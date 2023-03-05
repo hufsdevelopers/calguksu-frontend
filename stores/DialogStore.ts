@@ -2,21 +2,24 @@ import { action, makeObservable, observable } from 'mobx';
 
 export default class DialogStore {
   preview: Boolean = false;
-  report: Boolean = false;
+  feedback: Boolean = false;
   select: Boolean = false;
-  subscribe: Boolean = false;
+  delivery: Boolean = false;
 
   constructor() {
     makeObservable(this, {
       preview: observable,
-      report: observable,
+      feedback: observable,
       select: observable,
-      subscribe: observable,
+      delivery: observable,
       previewShow: action,
-      reportShow: action,
+      feedbackShow: action,
       selectShow: action,
-      subscribeShow: action,
+      deliveryShow: action,
       previewClose: action,
+      feedbackClose: action,
+      selectClose: action,
+      deliveryClose: action,
     });
   }
 
@@ -24,31 +27,31 @@ export default class DialogStore {
     if (!this.preview) this.preview = true;
   };
 
-  reportShow = () => {
-    if (!this.report) this.report = true;
+  feedbackShow = () => {
+    if (!this.feedback) this.feedback = true;
   };
 
   selectShow = () => {
     if (!this.select) this.select = true;
   };
 
-  subscribeShow = () => {
-    if (!this.subscribe) this.subscribe = true;
+  deliveryShow = () => {
+    if (!this.delivery) this.delivery = true;
   };
 
   previewClose = () => {
     if (this.preview) this.preview = false;
   };
 
-  reportClose = () => {
-    if (this.report) this.report = false;
+  feedbackClose = () => {
+    if (this.feedback) this.feedback = false;
   };
 
   selectClose = () => {
     if (this.select) this.select = false;
   };
 
-  subscribeClose = () => {
-    if (this.subscribe) this.subscribe = false;
+  deliveryClose = () => {
+    if (this.delivery) this.delivery = false;
   };
 }

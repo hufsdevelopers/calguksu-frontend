@@ -12,8 +12,8 @@ const customTheme = extendTheme({
   },
   colors: {
     primary: {
-      normal: '#F8DF00',
-      press: '#DFC800',
+      normal: '#F4E04B',
+      press: '#DDC512',
     },
     dark: {
       50: '#FAFAFA',
@@ -32,7 +32,7 @@ const customTheme = extendTheme({
     Heading: {
       baseStyle: {
         color: 'dark.900',
-        fontWeight: 'bold',
+        fontWeight: '600',
         '.chakra-ui-dark &': {
           color: 'white',
         },
@@ -57,12 +57,12 @@ const customTheme = extendTheme({
       variants: {
         buttonRadiusMd: {
           display: 'flex',
-          h: '10',
-          color: 'dark.800',
+          h: '60px',
+          color: '#403800',
           fontWeight: 'bold',
           alignItems: 'center',
           justifyContent: 'center',
-          borderRadius: 'md',
+          borderRadius: '8px',
           bgColor: 'dark.300',
           transition: 'all 0.2s ease-in-out',
           _hover: { bgColor: 'dark.400' },
@@ -75,16 +75,16 @@ const customTheme = extendTheme({
         },
         buttonRadiusMdYellow: {
           display: 'flex',
-          h: '10',
-          color: 'dark.800',
+          h: '60px',
+          color: '#403800',
           fontWeight: 'bold',
           alignItems: 'center',
           justifyContent: 'center',
-          borderRadius: 'md',
+          borderRadius: '8px',
           bgColor: 'primary.normal',
           transition: 'all 0.2s ease-in-out',
           _hover: { bgColor: 'primary.press' },
-          '.chakra-ui-dark &': { color: 'dark.800' },
+          '.chakra-ui-dark &': { color: '#403800' },
         },
         opacity: {
           color: 'dark.800',
@@ -144,13 +144,13 @@ const customTheme = extendTheme({
         bgColor: 'primary.press',
       },
       '.chakra-ui-dark &': {
-        color: 'dark.900',
+        color: '#403800',
       },
     },
     selectDialog: {
       bgColor: 'white',
       '.chakra-ui-dark &': {
-        bgColor: 'dark.800',
+        bgColor: '#2b2b2b',
       },
     },
   },
@@ -171,6 +171,14 @@ const customTheme = extendTheme({
         bg: 'white',
         '.chakra-ui-dark &': {
           bg: 'dark.900',
+        },
+      },
+      'ol, li': {
+        color: 'dark.600',
+        fontFamily: 'body',
+        lineHeight: 1.5,
+        '.chakra-ui-dark &': {
+          color: 'white',
         },
       },
       '.chakra-ui-dark': {
