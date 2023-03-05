@@ -27,8 +27,8 @@ export default function AgreementMarketing() {
             <Tbody>
               <Tr>
                 <Td w="60%" px={3} borderColor="dark.300" wordBreak="keep-all">
-                  "훕스디벨로퍼스"가 "CALGUKSU" 사용자를 대상으로 제공하는 이용자 맞춤형 서비스 및 상품 추천, 각종 경품
-                  행사, 이벤트 등의 광고성 정보 제공(이메일, 서신우편, SMS, 카카오톡 등)
+                  &quot;훕스디벨로퍼스&quot;가 &quot;CALGUKSU&quot; 사용자를 대상으로 제공하는 이용자 맞춤형 서비스 및
+                  상품 추천, 각종 경품 행사, 이벤트 등의 광고성 정보 제공(이메일, 서신우편, SMS, 카카오톡 등)
                 </Td>
                 <Td w="20%" minW="32px" px={3} borderColor="dark.300" wordBreak="keep-all">
                   이메일주소
