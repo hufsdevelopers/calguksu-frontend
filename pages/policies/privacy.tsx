@@ -41,10 +41,6 @@ export default function PrivacyPage() {
                 고객의 캘린더 구독 : 고객이 캘린더를 구독하고 있는 상태가 유지되는 경우, 1년간 마지막 갱신일로부터 추가
                 갱신이 없는 경우 고객이 캘린더를 구독하지 않는 상태로 보고 지체없이 파기함.
               </ListItem>
-              <ListItem>
-                고객 가입 및 관리 : 서비스 이용계약 또는 회원가입 해지시 후 1개월 후까지 단, 이메일 주소 및 기기 고유
-                식별자는 제재 회원의 경우 제재 기간이 종료되는 시점까지
-              </ListItem>
             </UnorderedList>
           </Flex>
           <Heading as="h2" fontSize="xl" mt={4}>
@@ -66,8 +62,8 @@ export default function PrivacyPage() {
             </UnorderedList>
           </Flex>
           <Text>
-            ② 정보주체는 개인정보처리책임자에게 전화 또는 이메일 등의 방법으로 연락하여 수정, 삭제할 수 있으며, 프로필
-            수정 페이지 하단의 회원 탈퇴를 눌러 개인정보 처리정리를 요구할 수 있습니다.
+            ② 정보주체는 개인정보처리책임자에게 전화 또는 이메일 등의 방법으로 연락하여 수정, 삭제할 수 있으며, 개인정보
+            처리정리를 요구할 수 있습니다.
           </Text>
           <Heading as="h2" fontSize="xl" mt={4}>
             4. 처리하는 개인정보의 항목
