@@ -20,7 +20,13 @@ export default function Error() {
         <Heading fontSize="3xl" textAlign="center">
           그럴리가 없는데... 😥
         </Heading>
-        <Text>다시 시도해보시고, 문제가 지속될 시 신고해주세요!</Text>
+        <Text>
+          다시 시도해보시고, 문제가 지속된다면&nbsp;
+          <Link href="mailto:support@hufsdevelopers.org" isExternal>
+            <u>여기</u>
+          </Link>
+          로 알려주세요!
+        </Text>
         <Link href="/" display="block" mt={6}>
           <Text as="button" px={6} variant="buttonRadiusMd" outline="none">
             ← 돌아가기
