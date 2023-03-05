@@ -130,10 +130,6 @@ export default observer(function DeliveryDialog() {
               <Link href="/policies/privacy" target="_blank" isExternal>
                 개인정보 처리방침
               </Link>
-              과&nbsp;
-              <Link href="/policies/agreement-marketing" target="_blank" isExternal>
-                마케팅 광고 수신
-              </Link>
               에 동의하는 것으로 간주됩니다.
             </Text>
           </Box>
