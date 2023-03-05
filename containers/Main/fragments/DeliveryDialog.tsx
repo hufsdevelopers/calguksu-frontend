@@ -92,10 +92,10 @@ export default observer(function DeliveryDialog() {
               type="email"
               value={email}
             />
-            <Flex mt={4}>
+            {/* <Flex mt={4}>
               <Checkbox />
               <Text></Text>
-            </Flex>
+            </Flex> */}
             {isEmail(email) ? (
               <Text
                 as="button"
