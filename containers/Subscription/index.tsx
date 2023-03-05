@@ -83,7 +83,7 @@ export default function Subscription({ userAgent }: PageProps) {
                   <Box
                     display="block"
                     as="a"
-                    href={`webcal://https://api.calguksu.com/calendars/${cn}/subscribe?token=${ct}`}
+                    href={`webcal://api.calguksu.com/calendars/${cn}/subscribe?token=${ct}`}
                     target="_blank"
                     layerStyle="button"
                   >
