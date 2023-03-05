@@ -77,9 +77,7 @@ export default function Subscription({ userAgent }: PageProps) {
             <TabPanels mt={3}>
               <TabPanel>
                 <Box>
-                  <Text textAlign="left">
-                    아래의 링크를 클릭하여 나타나는 애플 캘린더에서 구독 캘린더를 추가해주세요.
-                  </Text>
+                  <Text>아래의 링크를 클릭하여 나타나는 애플 캘린더에서 구독 캘린더를 추가해주세요.</Text>
                   <Box
                     display="block"
                     as="a"

@@ -6,6 +6,7 @@ import { observer } from 'mobx-react';
 import Link from '@/components/Link';
 import {
   Box,
+  Flex,
   Text,
   Heading,
   Input,
@@ -14,6 +15,7 @@ import {
   AlertDialogOverlay,
   AlertDialogCloseButton,
   useToast,
+  Checkbox,
 } from '@chakra-ui/react';
 
 export default observer(function DeliveryDialog() {
@@ -90,6 +92,10 @@ export default observer(function DeliveryDialog() {
               type="email"
               value={email}
             />
+            <Flex mt={4}>
+              <Checkbox />
+              <Text></Text>
+            </Flex>
             {isEmail(email) ? (
               <Text
                 as="button"
