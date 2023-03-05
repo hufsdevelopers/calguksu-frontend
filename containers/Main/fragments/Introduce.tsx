@@ -32,10 +32,10 @@ export default function Introduce() {
           src="/assets/image_laptop_boy.png"
           layout="fill"
           objectFit="contain"
-          priority={true}
           alt="Laptop Boy Image"
           draggable={false}
           style={{ userSelect: 'none', pointerEvents: 'none' }}
+          priority
         />
       </Flex>
     </Grid>
