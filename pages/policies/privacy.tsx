@@ -73,9 +73,9 @@ export default function PrivacyPage() {
             4. 처리하는 개인정보의 항목
           </Heading>
           <Flex flexDirection="column" gap={1}>
-            <Text>① ‘훕스디벨로퍼스’는 "칼국수" 서비스에서 다음의 개인정보 항목을 처리하고 있습니다.</Text>
+            <Text>① ‘훕스디벨로퍼스’는 &quot;칼국수&quot; 서비스에서 다음의 개인정보 항목을 처리하고 있습니다.</Text>
             <UnorderedList ml={8}>
-              <ListItem>"칼국수" 서비스 내 캘린더 구독 정보 - 필수항목 : 이메일</ListItem>
+              <ListItem>&quot;칼국수&quot; 서비스 내 캘린더 구독 정보 - 필수항목 : 이메일</ListItem>
             </UnorderedList>
           </Flex>
           <Heading as="h2" fontSize="xl" mt={4}>
