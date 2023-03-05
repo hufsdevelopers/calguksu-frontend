@@ -107,7 +107,7 @@ export default observer(function FeedbackDialog() {
                 outline="none"
                 onClick={() => sendFeedback()}
               >
-                이 주소로 받을게요
+                보내기
               </Text>
             ) : (
               <Text
@@ -129,7 +129,7 @@ export default observer(function FeedbackDialog() {
                   },
                 }}
               >
-                이 주소로 받을게요
+                보내기
               </Text>
             )}
           </Box>
