@@ -4,6 +4,7 @@ import StyledComponentsRegistry from '@/lib/registry';
 
 import appConfig from '../../app.config';
 import '@/styles/reset.css';
+import '@/styles/color-schemes.css';
 
 type RootLayoutProps = {
   children: React.ReactNode
@@ -18,7 +19,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang='ko'>
-      <body>
+      <body className='light' suppressHydrationWarning={true}>
+      <script async src='/scripts/theme-switcher.js' />
       <StyledComponentsRegistry>
         {children}
       </StyledComponentsRegistry>

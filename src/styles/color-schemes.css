@@ -1,0 +1,21 @@
+:root {
+    --text-sub: #62798C;
+}
+
+body {
+    background-color: var(--background-color);
+
+    &.light {
+        --background-color: white;
+        --text: #0D0D0D;
+    }
+
+    &.dark {
+        --background-color: #02050A;
+        --text: white;
+    }
+}
+
+p {
+    color: var(--text)
+}

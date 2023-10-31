@@ -1,6 +1,6 @@
-import useFullyFlow from '@/components/full-page/FullyFlow.hooks';
+import useFullyFlow from '@/components/common/FullyFlow/FullyFlow.hooks';
 
-export default function SubscribeSection() {
+export default function Index() {
   const { moveDown } = useFullyFlow();
   return <>
     Subscribe<br />

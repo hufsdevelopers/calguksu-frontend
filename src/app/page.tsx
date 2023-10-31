@@ -2,28 +2,27 @@
 import React from 'react';
 import useScreenSize from '@/hooks/useScreenSize';
 
-import FullyFlowProvider from '@/components/full-page/FullyFlowProvider';
-import FullyFlowSection from '@/components/full-page/FullyFlowSection';
-import GradientHalfOval from '@/components/ui/GradientHalfOval';
+import FullyFlow from '@/components/common/FullyFlow';
+import FullyFlowSection from '@/components/common/FullyFlow/FullyFlowSection';
 
-import IntroduceSection from '@/components/introduce/IntroduceSection';
-import ScheduleSection from '@/components/schedule/ScheduleSection';
-import CompleteSection from '@/components/complete/CompleteSection';
-import SubscribeSection from '@/components/subscribe/SubscribeSection';
+import IntroduceSection from '@/components/IntroduceSection';
+import ScheduleSection from '@/components/ScheduleSection';
+import SubscribeSection from '@/components/SubscribeSection';
+import CompleteSection from '@/components/CompleteSection';
+
+import { GradientOval } from '@/styles/ui.styles';
 
 export default function Home() {
   useScreenSize();
 
   return (<>
-      <div style={{ backgroundColor: '#02050A' }}>
-        <GradientHalfOval />
-        <FullyFlowProvider>
-          <FullyFlowSection><IntroduceSection /></FullyFlowSection>
-          <FullyFlowSection><ScheduleSection /></FullyFlowSection>
-          <FullyFlowSection><SubscribeSection /></FullyFlowSection>
-          <FullyFlowSection><CompleteSection /></FullyFlowSection>
-        </FullyFlowProvider>
-      </div>
+      <GradientOval />
+      <FullyFlow>
+        <FullyFlowSection><IntroduceSection /></FullyFlowSection>
+        <FullyFlowSection><ScheduleSection /></FullyFlowSection>
+        <FullyFlowSection><SubscribeSection /></FullyFlowSection>
+        <FullyFlowSection><CompleteSection /></FullyFlowSection>
+      </FullyFlow>
     </>
   );
 }

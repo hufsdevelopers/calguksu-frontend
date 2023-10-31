@@ -1,4 +1,4 @@
-import useFullyFlow from '@/components/full-page/FullyFlow.hooks';
+import useFullyFlow from '@/components/common/FullyFlow/FullyFlow.hooks';
 
 export default function CompleteSection() {
   const { moveToTop } = useFullyFlow();
