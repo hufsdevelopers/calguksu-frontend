@@ -2,9 +2,10 @@ import React from 'react';
 import { Metadata } from 'next';
 import StyledComponentsRegistry from '@/lib/registry';
 
-import appConfig from '../../app.config';
+import appConfig from '../config/app.config';
 import '@/styles/reset.css';
 import '@/styles/color-schemes.css';
+import 'pretendard/dist/web/static/pretendard.css';
 
 type RootLayoutProps = {
   children: React.ReactNode

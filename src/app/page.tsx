@@ -11,6 +11,7 @@ import SubscribeSection from '@/components/SubscribeSection';
 import CompleteSection from '@/components/CompleteSection';
 
 import { GradientOval } from '@/styles/ui.styles';
+import Header from '@/components/common/Header';
 
 export default function Home() {
   useScreenSize();
@@ -23,6 +24,7 @@ export default function Home() {
         <FullyFlowSection><SubscribeSection /></FullyFlowSection>
         <FullyFlowSection><CompleteSection /></FullyFlowSection>
       </FullyFlow>
+      <Header />
     </>
   );
 }

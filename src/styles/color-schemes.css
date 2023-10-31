@@ -1,5 +1,6 @@
 :root {
-    --text-sub: #62798C;
+    --calguksu-900: #0D0D0D;
+    --calguksu-400: #62798C;
 }
 
 body {
@@ -7,12 +8,12 @@ body {
 
     &.light {
         --background-color: white;
-        --text: #0D0D0D;
+        --main-text: var(--calguksu-900);
     }
 
     &.dark {
-        --background-color: #02050A;
-        --text: white;
+        --background-color: var(--calguksu-900);
+        --main-text: white;
     }
 }
 
