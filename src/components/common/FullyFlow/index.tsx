@@ -1,14 +1,14 @@
 'use client';
 import React, { useState, ReactNode } from 'react';
-import FullyFlowContext from '@/context/FullyFlowContext';
+import FullyFlowContext from '@/components/common/FullyFlow/FullyFlow.context';
 
 import { ViewportContainer, SectionsContainer } from './FullyFlow.styles';
 
-interface FullyFlowProviderProps {
+interface FullyFlowProps {
   children: ReactNode;
 }
 
-const FullyFlowProvider: React.FC<FullyFlowProviderProps> = ({ children }) => {
+const FullyFlow: React.FC<FullyFlowProps> = ({ children }) => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const totalSections = React.Children.count(children);
 
@@ -41,4 +41,4 @@ const FullyFlowProvider: React.FC<FullyFlowProviderProps> = ({ children }) => {
   );
 };
 
-export default FullyFlowProvider;
+export default FullyFlow;
