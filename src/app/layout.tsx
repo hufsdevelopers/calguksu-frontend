@@ -6,6 +6,7 @@ import appConfig from '../config/app.config';
 import '@/styles/reset.css';
 import '@/styles/color-schemes.css';
 import 'pretendard/dist/web/static/pretendard.css';
+import Head from 'next/head';
 
 type RootLayoutProps = {
   children: React.ReactNode
@@ -20,6 +21,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang='ko'>
+      <Head>
+        <link rel='icon' href='/favicon.ico' sizes='any' />
+        <link rel='icon' href='/icon?<generated>' type='image/<generated>' sizes='<generated>' />
+        <link rel='apple-touch-icon' href='/apple-icon?<generated>' type='image/<generated>' sizes='<generated>' />
+      </Head>
       <body className='light' suppressHydrationWarning={true}>
       <script dangerouslySetInnerHTML={{
         __html: `(function() {
