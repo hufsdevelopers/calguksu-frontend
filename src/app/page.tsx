@@ -12,11 +12,13 @@ import CompleteSection from '@/components/CompleteSection';
 
 import { GradientOval } from '@/styles/ui.styles';
 import Header from '@/components/common/Header';
+import ToastComponent from '@/components/common/Toast/ToastComponent';
 
 export default function Home() {
   useScreenSize();
 
   return (<>
+      <Header />
       <GradientOval />
       <FullyFlow>
         <FullyFlowSection><IntroduceSection /></FullyFlowSection>
@@ -24,7 +26,7 @@ export default function Home() {
         <FullyFlowSection><SubscribeSection /></FullyFlowSection>
         <FullyFlowSection><CompleteSection /></FullyFlowSection>
       </FullyFlow>
-      <Header />
+      <ToastComponent />
     </>
   );
 }

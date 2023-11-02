@@ -2,19 +2,20 @@ import React from 'react';
 import { Metadata } from 'next';
 import StyledComponentsRegistry from '@/lib/registry';
 
-import appConfig from '../config/app.config';
+import appConstants from '@/constants/app-constants';
 import '@/styles/reset.css';
 import '@/styles/color-schemes.css';
 import 'pretendard/dist/web/static/pretendard.css';
 import Head from 'next/head';
+import { ToastProvider } from '@/components/common/Toast/ToastProvider';
 
 type RootLayoutProps = {
   children: React.ReactNode
 }
 
 export const metadata: Metadata = {
-  title: appConfig.title,
-  description: appConfig.description,
+  title: appConstants.title,
+  description: appConstants.description,
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
@@ -63,7 +64,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   `,
       }} />
       <StyledComponentsRegistry>
-        {children}
+        <ToastProvider>
+          {children}
+        </ToastProvider>
       </StyledComponentsRegistry>
       </body>
       </html>
