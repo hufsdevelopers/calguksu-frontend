@@ -1,21 +1,30 @@
 :root {
-    --text-sub: #62798C;
+    --calguksu-colors-white: #FFFFFF;
+    --calguksu-colors-black: #000000;
+    --calguksu-colors-primary-900: #0D0D0D;
+    --calguksu-colors-primary-400: #62798C;
+    --calguksu-colors-primary-300: #7995AD;
+
+    --calguksu-colors-blue-normal: #2A7CE8;
+    --calguksu-colors-blue-hover: #2265BC;
+    --calguksu-colors-blue-invalid: #0D233D;
+    --calguksu-colors-blue-hover-text: #A3B4CB;
 }
 
 body {
     background-color: var(--background-color);
 
     &.light {
-        --background-color: white;
-        --text: #0D0D0D;
+        --background-color: var(--calguksu-colors-white);
+        --main-text: var(--calguksu-colors-primary-900);
     }
 
     &.dark {
-        --background-color: #02050A;
-        --text: white;
+        --background-color: var(--calguksu-colors-primary-900);
+        --main-text: var(--calguksu-colors-white);
     }
 }
 
 p {
-    color: var(--text)
+    color: var(--calguksu-colors-primary-900)
 }
