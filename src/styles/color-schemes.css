@@ -9,19 +9,21 @@
     --calguksu-colors-blue-hover: #2265BC;
     --calguksu-colors-blue-invalid: #0D233D;
     --calguksu-colors-blue-hover-text: #A3B4CB;
+
+    --calguksu-aap-blur: 7px;
 }
 
 body {
-    background-color: var(--background-color);
+    background-color: var(--calguksu-background-color);
 
     &.light {
-        --background-color: var(--calguksu-colors-white);
-        --main-text: var(--calguksu-colors-primary-900);
+        --calguksu-background-color: var(--calguksu-colors-white);
+        --calguksu-main-text: var(--calguksu-colors-primary-900);
     }
 
     &.dark {
-        --background-color: var(--calguksu-colors-primary-900);
-        --main-text: var(--calguksu-colors-white);
+        --calguksu-background-color: var(--calguksu-colors-primary-900);
+        --calguksu-main-text: var(--calguksu-colors-white);
     }
 }
 
