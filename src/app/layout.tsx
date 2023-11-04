@@ -7,7 +7,6 @@ import '@/styles/reset.css';
 import '@/styles/color-schemes.css';
 import 'pretendard/dist/web/static/pretendard.css';
 import Head from 'next/head';
-import { ToastProvider } from '@/components/common/Toast/ToastProvider';
 
 type RootLayoutProps = {
   children: React.ReactNode
@@ -31,15 +30,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <script dangerouslySetInnerHTML={{
         __html: `(function() {
                     let preferredTheme;
-                    window.__onThemeChange = function() {
-                    };
-                  
-                    function setTheme(newTheme) {
+                    window.__onThemeChange = function setTheme(newTheme) {
                       window.__theme = newTheme;
                       preferredTheme = newTheme;
                       document.body.className = newTheme;
-                      window.__onThemeChange(newTheme);
-                    }
+                    };
                   
                     try {
                       preferredTheme = localStorage.getItem('theme');
@@ -47,7 +42,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     }
                   
                     window.__setPreferredTheme = function(newTheme) {
-                      setTheme(newTheme);
+                      window.__onThemeChange(newTheme);
                       try {
                         localStorage.setItem('theme', newTheme);
                       } catch (err) {
@@ -59,14 +54,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
                       window.__setPreferredTheme(e.matches ? 'dark' : 'light');
                     });
                   
-                    setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+                    window.__onThemeChange(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
                     })();
                   `,
       }} />
       <StyledComponentsRegistry>
-        <ToastProvider>
-          {children}
-        </ToastProvider>
+        {children}
       </StyledComponentsRegistry>
       </body>
       </html>

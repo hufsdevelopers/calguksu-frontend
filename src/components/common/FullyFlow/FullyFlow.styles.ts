@@ -20,8 +20,8 @@ export const SectionsContainer = styled.div<{
   width: 100%;
 `;
 
-export const FullyFlowSection = styled.div`
+export const FullyFlowSection = styled.section`
   position: relative;
   height: calc(var(--vh, 1vh) * 100);
-  padding: 94px 44px 0 44px;
+  padding: 94px 0;
 `;

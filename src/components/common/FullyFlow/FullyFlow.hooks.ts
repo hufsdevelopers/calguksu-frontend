@@ -1,4 +1,3 @@
-'use client';
 import { useContext } from 'react';
 import FullyFlowContext from '@/components/common/FullyFlow/FullyFlow.context';
 

@@ -1,7 +1,8 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 import ThemeContext from '@/components/common/Theme/Theme.context';
+import ToastContext, { Toast } from '@/components/common/Toast/Toast.context';
 
-interface ThemeProviderProps {
+interface CalguksuProviderProps {
   children: ReactNode;
 }
 
@@ -11,7 +12,8 @@ const getInitialTheme = () => {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 };
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+export const CalguksuProvider: React.FC<CalguksuProviderProps> = ({ children }) => {
+  // Theme State
   const [theme, setTheme] = useState('undefined');
 
   useEffect(() => {
@@ -22,17 +24,30 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
+    setTheme(newTheme);
+    window.__onThemeChange(newTheme);
+  };
+
+  // Toast State
+  const [toast, setToast] = useState<Toast | null>(null);
+
+  const showToast = (message: string, type: 'success' | 'error', duration: number = 3000) => {
+    setToast({ message, type, duration });
   };
 
   useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
+    if (toast) {
+      const timer = setTimeout(() => setToast(null), toast.duration);
+      return () => clearTimeout(timer);
+    }
+  }, [toast]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
+      <ToastContext.Provider value={{ showToast, toast }}>
+        {children}
+      </ToastContext.Provider>
     </ThemeContext.Provider>
   );
 };

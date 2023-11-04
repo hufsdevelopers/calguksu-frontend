@@ -13,12 +13,12 @@ import CompleteSection from '@/components/CompleteSection';
 import { GradientOval } from '@/styles/ui.styles';
 import Header from '@/components/common/Header';
 import ToastComponent from '@/components/common/Toast/ToastComponent';
-import { ThemeProvider } from '@/components/common/Theme/ThemeProvider';
+import { CalguksuProvider } from '@/context/CalguksuProvider';
 
 export default function Home() {
   useScreenSize();
 
-  return (<ThemeProvider>
+  return (<CalguksuProvider>
       <Header />
       <GradientOval />
       <FullyFlow>
@@ -28,6 +28,6 @@ export default function Home() {
         <FullyFlowSection><CompleteSection /></FullyFlowSection>
       </FullyFlow>
       <ToastComponent />
-    </ThemeProvider>
+    </CalguksuProvider>
   );
 }
