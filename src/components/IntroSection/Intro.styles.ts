@@ -14,13 +14,14 @@ export const IntroImageBlock = styled.div`
   }
 `;
 
-export const IntroImageObject = styled.object`
+export const IntroImage = styled.img`
   left: 0;
   max-width: 440px;
   position: absolute;
   top: 0;
   user-select: none;
   width: 100%;
+  content: var(--calguksu-main-image);
 `;
 
 export const IntroTitle = styled.h2`
@@ -32,7 +33,7 @@ export const IntroTitle = styled.h2`
   text-align: center;
   word-break: keep-all;
   width: 100%;
-  
+
   ${media.laptop`
    font-size: 49px;
   `}

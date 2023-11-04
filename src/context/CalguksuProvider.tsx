@@ -17,9 +17,7 @@ export const CalguksuProvider: React.FC<CalguksuProviderProps> = ({ children }) 
   const [theme, setTheme] = useState('undefined');
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setTheme(getInitialTheme());
-    }
+    setTheme(getInitialTheme());
   }, []);
 
   const toggleTheme = () => {
