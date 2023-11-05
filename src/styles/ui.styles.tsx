@@ -43,6 +43,9 @@ export const SectionInnerContainer = styled.div`
 
 export const SectionContentColumn = styled.div`
   display: flex;
+  width: 100%;
+  max-width: 393px;
+  padding: 0 24px;
   flex-direction: column;
   gap: 31px;
 `;
@@ -50,7 +53,6 @@ export const SectionContentColumn = styled.div`
 export const SectionContentTitle = styled.div`
   display: flex;
   width: 100%;
-  max-width: 393px;
   align-items: center;
   justify-content: center;
   gap: 10px;

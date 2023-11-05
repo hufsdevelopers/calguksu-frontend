@@ -1,9 +1,10 @@
 :root {
     --calguksu-colors-white: #FFFFFF;
-    --calguksu-colors-white-alpha02: #FFFFFF05;
+    --calguksu-colors-white-alpha02: rgba(255, 255, 255, 0.02);
+    --calguksu-colors-white-alpha04: rgba(255, 255, 255, 0.04);
     --calguksu-colors-black: #000000;
 
-    --calguksu-colors-primary-900: #0D0D0D;
+    --calguksu-colors-primary-900: #02050A;
     --calguksu-colors-primary-800: #171D23;
     --calguksu-colors-primary-400: #62798C;
     --calguksu-colors-primary-300: #7995AD;
@@ -16,11 +17,12 @@
     --calguksu-colors-blue-100: #D9E3EE;
 
     --calguksu-colors-blue-hover-text: #A3B4CB;
-
+    --calguksu-colors-gray-700: #383D42;
     --calguksu-colors-gray-600: #54565A;
     --calguksu-colors-gray-400: #828689;
     --calguksu-colors-gray-300: #AFB0B0;
-    --calguksu-colors-gray-100: #EBEFF1;
+    --calguksu-colors-gray-150: #EBEFF1;
+    --calguksu-colors-gary-100: #F0F3F4;
     --calguksu-colors-gray-50: #FBFCFC;
 
     --calguksu-colors-blue-normal: var(--calguksu-colors-blue-500);
@@ -38,6 +40,10 @@ body {
         --calguksu-main-image: url("/static/assets/image-sample-calendar-day.png");
         --calguksu-main-gradient: none;
         --calguksu-colors-blue-invalid: var(--calguksu-colors-blue-100);
+        --calguksu-select-border: var(--calguksu-colors-gray-150);
+        --calguksu-select-background-color: var(--calguksu-colors-gray-50);
+        --calguksu-select-background-hover-color: var(--calguksu-colors-gary-100);
+        --calguksu-select-none-select: var(--calguksu-colors-gray-300);
     }
 
     &.dark {
@@ -46,6 +52,10 @@ body {
         --calguksu-main-image: url("/static/assets/image-sample-calendar.png");
         --calguksu-main-gradient: radial-gradient(52.22% 52.22% at 49.98% 47.78%, #2A7CE8 0%, rgba(42, 124, 232, 0.00) 100%);
         --calguksu-colors-blue-invalid: var(--calguksu-colors-blue-900);
+        --calguksu-select-border: var(--calguksu-colors-primary-800);
+        --calguksu-select-background-color: var(--calguksu-colors-white-alpha02);
+        --calguksu-select-background-hover-color: var(--calguksu-colors-white-alpha04);
+        --calguksu-select-none-select: var(--calguksu-colors-gray-600);
     }
 }
 

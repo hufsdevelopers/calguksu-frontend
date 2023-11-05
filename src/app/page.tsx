@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 
 import FullyFlow from '@/components/common/FullyFlow';
 import FullyFlowSection from '@/components/common/FullyFlow/FullyFlowSection';
@@ -14,12 +14,17 @@ import CompleteSection from '@/components/CompleteSection';
 import { GradientOval } from '@/styles/ui.styles';
 
 export default function Home() {
+  const [selectedCode, setSelectedCode] = useState<string | null>(null);
+  console.log(selectedCode);
+
   return (<>
       <Header />
       <GradientOval />
       <FullyFlow>
         <FullyFlowSection><IntroduceSection /></FullyFlowSection>
-        <FullyFlowSection><ScheduleSection /></FullyFlowSection>
+        <FullyFlowSection>
+          <ScheduleSection selectedCode={selectedCode} setSelectedCode={setSelectedCode} />
+        </FullyFlowSection>
         <FullyFlowSection><SubscribeSection /></FullyFlowSection>
         <FullyFlowSection><CompleteSection /></FullyFlowSection>
       </FullyFlow>
