@@ -12,7 +12,7 @@ const getInitialTheme = () => {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 };
 
-export const CalguksuProvider: React.FC<CalguksuProviderProps> = ({ children }) => {
+const CalguksuProvider: React.FC<CalguksuProviderProps> = ({ children }) => {
   // Theme State
   const [theme, setTheme] = useState('undefined');
 
@@ -49,3 +49,5 @@ export const CalguksuProvider: React.FC<CalguksuProviderProps> = ({ children }) 
     </ThemeContext.Provider>
   );
 };
+
+export default CalguksuProvider;

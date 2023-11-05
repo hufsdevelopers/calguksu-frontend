@@ -8,7 +8,7 @@ import { SectionInnerContainer } from '@/styles/ui.styles';
 export default function IntroduceSection() {
   const { moveDown } = useFullyFlow();
 
-  return <SectionInnerContainer>
+  return <SectionInnerContainer style={{ justifyContent: 'start' }}>
     <IntroImageBlock>
       {<IntroImage />}
     </IntroImageBlock>

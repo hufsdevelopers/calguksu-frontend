@@ -1,22 +1,23 @@
 import React from 'react';
-import Image from 'next/image';
-import { useTheme } from '@/hooks/useTheme';
 
+import { useTheme } from '@/components/common/Theme/Theme.hooks';
 import { HeaderBrandingBlock, HeaderContainer, ThemeController } from '@/components/common/Header/Header.styles';
 
-import appConfig from '@/config/app.config';
+import appConstants from '@/constants/app-constants';
+import DayIcon from '@/components/common/icon/day-icon';
+import NightIcon from '@/components/common/icon/night-icon';
+import LogoIcon from '@/components/common/icon/logo-icon';
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
+
   return <HeaderContainer>
     <HeaderBrandingBlock>
-      <Image src='/icon/ico-logo.svg' width={24} height={24} alt='logo' />
-      {appConfig.titleEng}
+      <LogoIcon width={24} height={24} fill='#2A7CE8' />
+      {appConstants.titleEng}
     </HeaderBrandingBlock>
     <ThemeController onClick={toggleTheme}>
-      {theme === 'light'
-        ? <Image src='/icon/ico-night.svg' width={24} height={24} alt='day' />
-        : <Image src='/icon/ico-day.svg' width={24} height={24} alt='day' />}
+      {theme === 'light' ? <NightIcon width={24} height={24} /> : <DayIcon width={24} height={24} />}
     </ThemeController>
   </HeaderContainer>;
 };

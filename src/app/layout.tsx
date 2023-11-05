@@ -1,13 +1,13 @@
 'use client';
 import React from 'react';
+import Head from 'next/head';
 import StyledComponentsRegistry from '@/lib/registry';
+import useScreenSize from '@/hooks/useScreenSize';
+import CalguksuProvider from '@/context/CalguksuProvider';
 
 import '@/styles/reset.css';
 import '@/styles/color-schemes.css';
 import 'pretendard/dist/web/static/pretendard.css';
-import Head from 'next/head';
-import { CalguksuProvider } from '@/context/CalguksuProvider';
-import useScreenSize from '@/hooks/useScreenSize';
 
 type RootLayoutProps = {
   children: React.ReactNode

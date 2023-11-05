@@ -1,9 +1,15 @@
 import useFullyFlow from '@/components/common/FullyFlow/FullyFlow.hooks';
+import { SectionContentColumn, SectionContentTitle, SectionInnerContainer } from '@/styles/ui.styles';
 
 export default function CompleteSection() {
   const { moveToTop } = useFullyFlow();
-  return <>
-    Complete<br />
-    <button onClick={moveToTop}>move to top</button>
-  </>;
+  return <SectionInnerContainer>
+    <SectionContentColumn>
+      <SectionContentTitle>
+        <p>🍜</p>
+        <p>다 됐어요</p>
+      </SectionContentTitle>
+
+    </SectionContentColumn>
+  </SectionInnerContainer>;
 }

@@ -32,6 +32,7 @@ export const SectionInnerContainer = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   overflow-y: auto;
   padding: 134px 0 40px 0;
 
@@ -47,6 +48,16 @@ export const SectionContentColumn = styled.div`
 `;
 
 export const SectionContentTitle = styled.div`
+  display: flex;
   width: 100%;
   max-width: 393px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  & p {
+    color: var(--calguksu-main-text);
+    font-size: 24px;
+    font-weight: 500;
+  }
 `;
