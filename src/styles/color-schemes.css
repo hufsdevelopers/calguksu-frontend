@@ -28,7 +28,7 @@
     --calguksu-colors-blue-normal: var(--calguksu-colors-blue-500);
     --calguksu-colors-blue-hover: var(--calguksu-colors-blue-600);
 
-    --calguksu-aap-blur: 7px;
+    --calguksu-colors-error: #CA3939;
 }
 
 body {
@@ -40,10 +40,11 @@ body {
         --calguksu-main-image: url("/static/assets/image-sample-calendar-day.png");
         --calguksu-main-gradient: none;
         --calguksu-colors-blue-invalid: var(--calguksu-colors-blue-100);
-        --calguksu-select-border: var(--calguksu-colors-gray-150);
-        --calguksu-select-background-color: var(--calguksu-colors-gray-50);
-        --calguksu-select-background-hover-color: var(--calguksu-colors-gary-100);
-        --calguksu-select-none-select: var(--calguksu-colors-gray-300);
+        --calguksu-colors-blue-invalid-text: var(--calguksu-colors-white);
+        --calguksu-box-border: var(--calguksu-colors-gray-150);
+        --calguksu-box-background-color: var(--calguksu-colors-gray-50);
+        --calguksu-box-background-hover-color: var(--calguksu-colors-gary-100);
+        --calguksu-box-none-select: var(--calguksu-colors-gray-300);
     }
 
     &.dark {
@@ -52,10 +53,11 @@ body {
         --calguksu-main-image: url("/static/assets/image-sample-calendar.png");
         --calguksu-main-gradient: radial-gradient(52.22% 52.22% at 49.98% 47.78%, #2A7CE8 0%, rgba(42, 124, 232, 0.00) 100%);
         --calguksu-colors-blue-invalid: var(--calguksu-colors-blue-900);
-        --calguksu-select-border: var(--calguksu-colors-primary-800);
-        --calguksu-select-background-color: var(--calguksu-colors-white-alpha02);
-        --calguksu-select-background-hover-color: var(--calguksu-colors-white-alpha04);
-        --calguksu-select-none-select: var(--calguksu-colors-gray-600);
+        --calguksu-colors-blue-invalid-text: var(--calguksu-colors-gray-700);
+        --calguksu-box-border: var(--calguksu-colors-primary-800);
+        --calguksu-box-background-color: var(--calguksu-colors-white-alpha02);
+        --calguksu-box-background-hover-color: var(--calguksu-colors-white-alpha04);
+        --calguksu-box-none-select: var(--calguksu-colors-gray-600);
     }
 }
 

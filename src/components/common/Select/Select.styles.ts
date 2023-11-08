@@ -21,7 +21,7 @@ export const OptionContainer = styled.div<{ $hover: boolean }>`
 
   &:hover {
     border-radius: 8px;
-    background-color: ${({ $hover }) => $hover ? 'var(--calguksu-select-background-hover-color)' : 'transparent'};
+    background-color: ${({ $hover }) => $hover ? 'var(--calguksu-box-background-hover-color)' : 'transparent'};
   }
 `;
 
@@ -40,7 +40,7 @@ export const Placeholder = styled.div`
 
   & span {
     padding: 0 24px;
-    color: var(--calguksu-select-none-select);
+    color: var(--calguksu-box-none-select);
   }
 `;
 
@@ -49,8 +49,8 @@ export const SelectContainer = styled.div`
   width: 100%;
   max-width: 393px;
   border-radius: 6px;
-  background-color: var(--calguksu-select-background-color);
-  border: 1px solid var(--calguksu-select-border);
+  background-color: var(--calguksu-box-background-color);
+  border: 1px solid var(--calguksu-box-border);
 `;
 
 export const OptionCalendarIcon = styled.img`
