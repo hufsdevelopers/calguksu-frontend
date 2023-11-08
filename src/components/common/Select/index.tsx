@@ -7,18 +7,17 @@ import { ArrowDownRadioIcon, ArrowUpRadioIcon } from '@/components/common/icon/a
 
 interface CustomSelectProps {
   options: CalendarOptionType[];
+  selected: string | null;
   onSelect: (value: string) => void;
 }
 
-const Select: React.FC<CustomSelectProps> = ({ options, onSelect }) => {
+const Select: React.FC<CustomSelectProps> = ({ options, selected, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState<string | null>(null);
   const selectRef = useRef<HTMLDivElement | null>(null);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   const handleSelectOption = useCallback((code: string) => {
-    setSelectedValue(code);
     onSelect(code);
     setIsOpen(false);
   }, [onSelect]);
@@ -39,9 +38,9 @@ const Select: React.FC<CustomSelectProps> = ({ options, onSelect }) => {
   return (
     <SelectContainer ref={selectRef}>
       <Placeholder onClick={toggleDropdown}>
-        {selectedValue
+        {selected
           ? <OptionComponent
-            option={options.find(option => option.code === selectedValue)}
+            option={options.find(option => option.code === selected)}
             onClick={() => undefined}
             hover={false} />
           : <span>선택하세요</span>}

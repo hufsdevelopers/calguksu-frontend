@@ -15,7 +15,6 @@ import { GradientOval } from '@/styles/ui.styles';
 
 export default function Home() {
   const [selectedCode, setSelectedCode] = useState<string | null>(null);
-  console.log(selectedCode);
 
   return (<>
       <Header />
