@@ -29,6 +29,8 @@
     --calguksu-colors-blue-hover: var(--calguksu-colors-blue-600);
 
     --calguksu-colors-error: #CA3939;
+    
+    --calguksu-checkbox-select: var(--calguksu-colors-blue-500);
 }
 
 body {
@@ -45,6 +47,7 @@ body {
         --calguksu-box-background-color: var(--calguksu-colors-gray-50);
         --calguksu-box-background-hover-color: var(--calguksu-colors-gary-100);
         --calguksu-box-none-select: var(--calguksu-colors-gray-300);
+        --calguksu-checkbox-none-select: var(--calguksu-colors-blue-100);
     }
 
     &.dark {
@@ -58,6 +61,7 @@ body {
         --calguksu-box-background-color: var(--calguksu-colors-white-alpha02);
         --calguksu-box-background-hover-color: var(--calguksu-colors-white-alpha04);
         --calguksu-box-none-select: var(--calguksu-colors-gray-600);
+        --calguksu-checkbox-none-select: var(--calguksu-colors-gray-600);
     }
 }
 
