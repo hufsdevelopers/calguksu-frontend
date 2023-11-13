@@ -1,5 +1,7 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
+import CalguksuProvider from '@/context/CalguksuProvider';
+import useScreenSize from '@/hooks/useScreenSize';
 
 import FullyFlow from '@/components/common/FullyFlow';
 import FullyFlowSection from '@/components/common/FullyFlow/FullyFlowSection';
@@ -14,20 +16,18 @@ import CompleteSection from '@/components/CompleteSection';
 import { GradientOval } from '@/styles/ui.styles';
 
 export default function Home() {
-  const [selectedCode, setSelectedCode] = useState<string | null>(null);
+  useScreenSize();
 
-  return (<>
+  return (<CalguksuProvider>
       <Header />
       <GradientOval />
       <FullyFlow>
         <FullyFlowSection><IntroduceSection /></FullyFlowSection>
-        <FullyFlowSection>
-          <ScheduleSection selectedCode={selectedCode} setSelectedCode={setSelectedCode} />
-        </FullyFlowSection>
+        <FullyFlowSection><ScheduleSection /></FullyFlowSection>
         <FullyFlowSection><SubscribeSection /></FullyFlowSection>
         <FullyFlowSection><CompleteSection /></FullyFlowSection>
       </FullyFlow>
       <ToastComponent />
-    </>
+    </CalguksuProvider>
   );
 }

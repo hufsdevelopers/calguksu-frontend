@@ -1,20 +1,46 @@
-'use client';
 import React from 'react';
 import Head from 'next/head';
+import { Metadata } from 'next';
 import StyledComponentsRegistry from '@/lib/registry';
-import useScreenSize from '@/hooks/useScreenSize';
-import CalguksuProvider from '@/context/CalguksuProvider';
 
 import '@/styles/reset.css';
 import '@/styles/color-schemes.css';
 import 'pretendard/dist/web/static/pretendard.css';
 
+import appConstants from '@/constants/app-constants';
+
 type RootLayoutProps = {
   children: React.ReactNode
 }
 
+export const metadata: Metadata = {
+  metadataBase: new URL(appConstants.url),
+  title: appConstants.title,
+  description: appConstants.description,
+  openGraph: {
+    title: appConstants.title,
+    description: appConstants.description,
+    url: appConstants.url,
+    siteName: appConstants.titleEng,
+    locale: appConstants.locale,
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
 export default function RootLayout({ children }: RootLayoutProps) {
-  useScreenSize();
 
   return (
     <>
@@ -57,9 +83,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   `,
       }} />
       <StyledComponentsRegistry>
-        <CalguksuProvider>
-          {children}
-        </CalguksuProvider>
+        {children}
       </StyledComponentsRegistry>
       </body>
       </html>
