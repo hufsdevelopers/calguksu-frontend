@@ -1,8 +1,10 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 
+import InputContext from '@/context/InputContext';
 import ThemeContext from '@/components/common/Theme/Theme.context';
 import ToastContext, { Toast } from '@/components/common/Toast/Toast.context';
-import InputContext from '@/context/InputContext';
+
+import { CalendarOptionType } from '@/types/select-types';
 
 interface CalguksuProviderProps {
   children: ReactNode;
@@ -44,14 +46,14 @@ const CalguksuProvider: React.FC<CalguksuProviderProps> = ({ children }) => {
   }, [toast]);
 
   // Input State
-  const [selectedCode, setSelectedCode] = useState<string | null>(null);
+  const [selectedCalendar, setSelectedCalendar] = useState<CalendarOptionType | null>(null);
   const [inputtedEmail, setInputtedEmail] = useState<string>('');
   const [privacyAgree, setPrivacyAgree] = useState<boolean>(false);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <InputContext.Provider
-        value={{ selectedCode, setSelectedCode, inputtedEmail, setInputtedEmail, privacyAgree, setPrivacyAgree }}>
+        value={{ selectedCalendar, setSelectedCalendar, inputtedEmail, setInputtedEmail, privacyAgree, setPrivacyAgree }}>
         <ToastContext.Provider value={{ showToast, toast }}>
           {children}
         </ToastContext.Provider>

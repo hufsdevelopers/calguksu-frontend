@@ -14,6 +14,7 @@ export const ButtonBlock = styled.button<{ $width: string }>`
   transition: all 200ms ease;
   width: ${({ $width }) => $width};
   background-color: ${props => (props['aria-invalid'] === true ? 'var(--calguksu-colors-blue-invalid)' : 'var(--calguksu-colors-blue-normal)')};
+  user-select: none;
 
   &:hover {
     background-color: ${props => (props['aria-invalid'] === true ? 'var(--calguksu-colors-blue-invalid)' : 'var(--calguksu-colors-blue-hover)')};

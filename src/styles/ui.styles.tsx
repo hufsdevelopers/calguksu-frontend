@@ -63,3 +63,20 @@ export const SectionContentTitle = styled.div`
     font-weight: 500;
   }
 `;
+
+export const SectionComment = styled.p`
+  color: var(--calguksu-text-comment-normal);
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: -10px;
+  text-align: center;
+  word-break: keep-all;
+`;
+
+export const SectionCommentHighlight = styled.span`
+  color: var(--calguksu-text-comment-link);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+`;
