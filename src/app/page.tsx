@@ -1,5 +1,7 @@
 'use client';
 import React from 'react';
+import CalguksuProvider from '@/context/CalguksuProvider';
+import useScreenSize from '@/hooks/useScreenSize';
 
 import FullyFlow from '@/components/common/FullyFlow';
 import FullyFlowSection from '@/components/common/FullyFlow/FullyFlowSection';
@@ -14,7 +16,9 @@ import CompleteSection from '@/components/CompleteSection';
 import { GradientOval } from '@/styles/ui.styles';
 
 export default function Home() {
-  return (<>
+  useScreenSize();
+
+  return (<CalguksuProvider>
       <Header />
       <GradientOval />
       <FullyFlow>
@@ -24,6 +28,6 @@ export default function Home() {
         <FullyFlowSection><CompleteSection /></FullyFlowSection>
       </FullyFlow>
       <ToastComponent />
-    </>
+    </CalguksuProvider>
   );
 }
