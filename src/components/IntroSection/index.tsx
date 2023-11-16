@@ -1,6 +1,7 @@
 import React from 'react';
 
 import useFullyFlow from '@/components/common/FullyFlow/FullyFlow.hooks';
+
 import Button from '@/components/common/Button';
 import { IntroImageBlock, IntroImage, IntroSubTitle, IntroTitle } from '@/components/IntroSection/Intro.styles';
 import { SectionInnerContainer } from '@/styles/ui.styles';
