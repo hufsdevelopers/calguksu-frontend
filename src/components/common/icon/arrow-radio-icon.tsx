@@ -12,6 +12,7 @@ const ArrowRadioIcon: React.FC<IconProps> = React.memo((props) => (
     </svg>
   </Icon>
 ));
+ArrowRadioIcon.displayName = 'ArrowRadioIcon';
 
 export const ArrowDownRadioIcon: React.FC<IconProps> = React.memo((props) => (
   <ArrowRadioIcon style={{ transform: 'rotate(0deg)' }} {...props} />
