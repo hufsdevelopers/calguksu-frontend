@@ -1,8 +1,9 @@
 import React, { createContext } from 'react';
+import { CalendarOptionType } from '@/types/select-types';
 
 interface InputContextType {
-  selectedCode: string | null;
-  setSelectedCode: React.Dispatch<React.SetStateAction<string | null>>;
+  selectedCalendar: CalendarOptionType | null;
+  setSelectedCalendar: React.Dispatch<React.SetStateAction<CalendarOptionType | null>>;
   inputtedEmail: string;
   setInputtedEmail: React.Dispatch<React.SetStateAction<string>>;
   privacyAgree: boolean;

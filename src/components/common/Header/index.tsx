@@ -13,7 +13,7 @@ const Header = () => {
   const { theme, toggleTheme } = useTheme();
 
   return <HeaderContainer>
-    <HeaderBrandingBlock>
+    <HeaderBrandingBlock href='/'>
       <LogoIcon width={24} height={24} fill='#2A7CE8' />
       {appConstants.titleEng}
     </HeaderBrandingBlock>
