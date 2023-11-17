@@ -9,8 +9,8 @@ import 'pretendard/dist/web/static/pretendard.css';
 
 import appConstants from '@/constants/app-constants';
 
-type RootLayoutProps = {
-  children: React.ReactNode
+interface RootLayoutProps {
+  children: React.ReactNode;
 }
 
 export const metadata: Metadata = {

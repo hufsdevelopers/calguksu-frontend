@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+
 import useFullyFlow from '@/components/common/FullyFlow/FullyFlow.hooks';
 import useInputContext from '@/hooks/useInputContext';
 import useTheme from '@/components/common/Theme/Theme.hooks';
@@ -54,8 +55,8 @@ export default function Index() {
       <Button width='100%' onClick={() => {
         if (validateEmail(inputtedEmail)) moveDown();
       }} aria-invalid={!validateEmail(inputtedEmail)}>여기로 받을게요</Button>
-      <SectionComment>진행하면 칼국수닷첨의
-        <SectionCommentHighlight as='a' href='/policies/privacy' target='_blank'>개인정보처리방침</SectionCommentHighlight>에
+      <SectionComment>진행하면 칼국수닷컴의&nbsp;
+        <SectionCommentHighlight as={Link} href='/policies/privacy' target='_blank'>개인정보처리방침</SectionCommentHighlight>에
         동의하는 것으로 간주합니다.</SectionComment>
     </SectionContentColumn>
   </SectionInnerContainer>;
