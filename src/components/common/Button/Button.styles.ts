@@ -21,3 +21,16 @@ export const ButtonBlock = styled.button<{ $width: string }>`
     color: ${props => (props['aria-invalid'] === true ? 'var(--calguksu-colors-blue-invalid-text)' : 'var(--calguksu-colors-blue-hover-text)')};
   }
 `;
+
+export const NavigationButtonBlock = styled.button`
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 7px;
+  user-select: none;
+  background-color: var(--calguksu-button-navigation-background-color);
+  color: var(--calguksu-button-navigation-text-color)
+`;
