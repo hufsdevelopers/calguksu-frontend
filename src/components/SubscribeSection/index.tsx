@@ -57,7 +57,7 @@ export default function Index() {
       }} aria-invalid={!validateEmail(inputtedEmail)}>여기로 받을게요</Button>
       <SectionComment>진행하면 칼국수닷컴의&nbsp;
         <SectionCommentHighlight as={Link} href='/policies/privacy' target='_blank'>개인정보처리방침</SectionCommentHighlight>에
-        동의하는 것으로 간주합니다.</SectionComment>
+        동의하는 것으로 간주됩니다.</SectionComment>
     </SectionContentColumn>
   </SectionInnerContainer>;
 }
