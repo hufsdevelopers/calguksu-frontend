@@ -1,6 +1,7 @@
 'use client';
-import { PolicyLayout } from '@/styles/ui.styles';
-import { PolicyContent, PolicyTitle } from '@/styles/policy.styles';
+import React from 'react';
+
+import { PolicyLayout, PolicyContent, PolicyTitle } from '@/styles/policy.styles';
 
 export default function PrivacyPage() {
   return <PolicyLayout>
@@ -16,7 +17,8 @@ export default function PrivacyPage() {
       <strong>2. 개인정보의 처리 및 보유 기간</strong><br /><br />
       ① ‘훕스디벨로퍼스’는 정보주체로부터 개인정보를 수집할 때 동의 받은 개인정보 보유․이용기간 또는 법령에 따른 개인정보 보유․이용기간 내에서 개인정보를 처리․보유합니다.<br />
       ② 구체적인 개인정보 처리 및 보유 기간은 다음과 같습니다.<br />
-      <li>고객의 캘린더 구독 : 고객이 캘린더를 구독하고 있는 상태가 유지되는 경우, 1년간 마지막 갱신일로부터 추가 갱신이 없는 경우 고객이 캘린더를 구독하지 않는 상태로 보고 지체없이 파기함.</li>
+      <li>고객의 캘린더 구독 : 고객이 캘린더를 구독하고 있는 상태가 유지되는 경우, 1년간 마지막 갱신일로부터 추가 갱신이 없는 경우 고객이 캘린더를 구독하지 않는 상태로 보고 지체없이 파기함.
+      </li>
       <br />
 
       <strong>3. 정보주체의 열람 등의 권리 행사</strong><br /><br />
@@ -39,14 +41,16 @@ export default function PrivacyPage() {
       <br />
 
       <strong>6. 개인정보 보호책임자 선임 현황</strong><br /><br />
-      ① ‘훕스디벨로퍼스’는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.<br />
+      ① ‘훕스디벨로퍼스’는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고
+      있습니다.<br />
       <li>개인정보 보호책임자 성명 : 김경록, 직책 : 관리자, 직급 : 관리자 연락처 : 010-4684-1248, <a href='mailto:support@hufsdevelopers.org'
                                                                           target='_blank'>support@hufsdevelopers.org</a><br />
         ※ 개인정보 보호 담당부서로 연결됩니다.
       </li>
       <li>개인정보 보호 담당부서 부서명 : 훕스디벨로퍼스, 개인정보 관리팀담당자 : 김경록, 연락처 : 010-4684-1248, <a
         href='mailto:support@hufsdevelopers.org' target='_blank'>support@hufsdevelopers.org</a></li>
-      ② 정보주체께서는 ‘훕스디벨로퍼스’의 서비스(또는 사업)을 이용하시면서 발생한 모든 개인정보 보호 관련 문의, 불만처리, 피해구제 등에 관한 사항을 개인정보 보호책임자 및 담당부서로 문의하실 수 있습니다.
+      ② 정보주체께서는 ‘훕스디벨로퍼스’의 서비스(또는 사업)을 이용하시면서 발생한 모든 개인정보 보호 관련 문의, 불만처리, 피해구제 등에 관한 사항을 개인정보 보호책임자 및 담당부서로 문의하실 수
+      있습니다.
       ‘훕스디벨로퍼스’는 정보주체의 문의에 대해 지체 없이 답변 및 처리해드릴 것입니다.
       <br />
     </PolicyContent>

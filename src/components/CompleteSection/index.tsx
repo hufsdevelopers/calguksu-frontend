@@ -9,10 +9,11 @@ import {
   SectionInnerContainer,
 } from '@/styles/ui.styles';
 import { CompleteInnerHighlight, CompleteText } from '@/components/CompleteSection/Complete.styles';
+import { requestEmailSubscription } from '@/utils/calendar-utils';
 
 export default function CompleteSection() {
   const { moveToTop } = useFullyFlow();
-  const { selectedCalendar } = useInputContext();
+  const { selectedCalendar, inputtedEmail } = useInputContext();
 
   return <SectionInnerContainer>
     <SectionContentColumn>
@@ -25,8 +26,11 @@ export default function CompleteSection() {
           <CompleteInnerHighlight>haklee.googl@gmail.com</CompleteInnerHighlight>로 주문 하신<br />
           {selectedCalendar.name} {selectedCalendar.type}을 배달했어요
         </CompleteText>
-        <SectionComment style={{ marginTop: 0 }}>메일함에서 찾을수 없나요? 다시
-          보내려면 <SectionCommentHighlight>이곳</SectionCommentHighlight>을 클릭하세요.</SectionComment>
+        <SectionComment style={{ marginTop: 0 }}>메일함에서 찾을수 없나요? 다시 보내려면&nbsp;
+          <SectionCommentHighlight onClick={() => {
+            requestEmailSubscription(inputtedEmail, selectedCalendar?.code).then(r => {
+            });
+          }}>이곳</SectionCommentHighlight>을 클릭하세요.</SectionComment>
       </> : <>오류!</>}
     </SectionContentColumn>
   </SectionInnerContainer>;
