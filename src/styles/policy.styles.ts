@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+export const PolicyLayout = styled.div`
+  width: 100%;
+  max-width: 929px;
+  padding: 96px 24px;
+  margin: 0 auto;
+`;
+
 export const PolicyTitle = styled.h1`
   color: var(--calguksu-button-navigation-text-color);
   font-size: 32px;

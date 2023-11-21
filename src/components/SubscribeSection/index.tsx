@@ -17,11 +17,19 @@ import {
   SectionContentTitle,
   SectionInnerContainer,
 } from '@/styles/ui.styles';
+import { requestEmailSubscription } from '@/utils/calendar-utils';
 
 export default function Index() {
   const { theme } = useTheme();
   const { moveDown } = useFullyFlow();
-  const { inputtedEmail, setInputtedEmail, privacyAgree, setPrivacyAgree } = useInputContext();
+  const {
+    selectedCalendar,
+    inputtedEmail,
+    setInputtedEmail,
+    privacyAgree,
+    setPrivacyAgree,
+    setSelectedCalendar,
+  } = useInputContext();
 
   const validateEmail = (email: string): boolean => {
     const re: RegExp = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -53,11 +61,15 @@ export default function Index() {
                   }} />
       </InputContainer>
       <Button width='100%' onClick={() => {
-        if (validateEmail(inputtedEmail)) moveDown();
+        if (validateEmail(inputtedEmail) && selectedCalendar) {
+          requestEmailSubscription(inputtedEmail, '123')
+            .catch(() => setSelectedCalendar(null))
+            .finally(() => moveDown());
+        }
       }} aria-invalid={!validateEmail(inputtedEmail)}>여기로 받을게요</Button>
       <SectionComment>진행하면 칼국수닷컴의&nbsp;
         <SectionCommentHighlight as={Link} href='/policies/privacy' target='_blank'>개인정보처리방침</SectionCommentHighlight>에
-        동의하는 것으로 간주합니다.</SectionComment>
+        동의하는 것으로 간주됩니다.</SectionComment>
     </SectionContentColumn>
   </SectionInnerContainer>;
 }

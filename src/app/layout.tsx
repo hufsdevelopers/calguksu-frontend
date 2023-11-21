@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
 import { Metadata } from 'next';
 import StyledComponentsRegistry from '@/lib/registry';
 
@@ -17,6 +16,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(appConstants.url),
   title: appConstants.title,
   description: appConstants.description,
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-icon.png',
+    shortcut: 'icon.png',
+  },
   openGraph: {
     title: appConstants.title,
     description: appConstants.description,
@@ -45,11 +49,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang='ko'>
-      <Head>
-        <link rel='icon' href='/favicon.ico' sizes='any' />
-        <link rel='icon' href='/icon?<generated>' type='image/<generated>' sizes='<generated>' />
-        <link rel='apple-touch-icon' href='/apple-icon?<generated>' type='image/<generated>' sizes='<generated>' />
-      </Head>
       <body className='light' suppressHydrationWarning={true}>
       <script dangerouslySetInnerHTML={{
         __html: `(function() {

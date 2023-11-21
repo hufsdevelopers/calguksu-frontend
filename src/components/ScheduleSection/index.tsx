@@ -13,7 +13,7 @@ import { CalendarOptionType } from '@/types/select-types';
 const options: CalendarOptionType[] = [
   {
     icon: '/static/assets/icon-hufs.svg',
-    code: 'hufs',
+    code: 'hufsofficial',
     name: '한국외국어대학교',
     type: '학사일정',
   },

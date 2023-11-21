@@ -80,10 +80,3 @@ export const SectionCommentHighlight = styled.span`
   cursor: pointer;
   text-decoration: underline;
 `;
-
-export const PolicyLayout = styled.div`
-  width: 100%;
-  max-width: 929px;
-  padding: 96px 24px;
-  margin: 0 auto;
-`;
