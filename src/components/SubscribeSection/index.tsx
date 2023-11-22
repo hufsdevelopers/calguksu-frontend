@@ -62,7 +62,7 @@ export default function Index() {
       </InputContainer>
       <Button width='100%' onClick={() => {
         if (validateEmail(inputtedEmail) && selectedCalendar) {
-          requestEmailSubscription(inputtedEmail, '123')
+          requestEmailSubscription(inputtedEmail, selectedCalendar.code)
             .catch(() => setSelectedCalendar(null))
             .finally(() => moveDown());
         }
