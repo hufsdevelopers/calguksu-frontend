@@ -80,3 +80,10 @@ export const SectionCommentHighlight = styled.span`
   cursor: pointer;
   text-decoration: underline;
 `;
+
+export const ErrorTitle = styled.p`
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--calguksu-main-text);
+  margin-top: 72px;
+`;
