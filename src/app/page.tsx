@@ -8,8 +8,8 @@ import SubscribeSection from '@/app/_sections/SubscribeSection';
 import CompleteSection from '@/app/_sections/CompleteSection';
 
 import Header from '@/components/Header';
-import FullyFlow from '@/components/common/FullyFlow';
-import FullyFlowSection from '@/components/common/FullyFlow/FullyFlowSection';
+import FullyFlow from '../components/FullyFlow';
+import FullyFlowSection from '@/components/FullyFlow/FullyFlowSection';
 import { GradientOval } from '@/styles/ui.styles';
 
 export default function HomePage() {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import useFullyFlow from '@/components/common/FullyFlow/FullyFlow.hooks';
-import { requestEmailSubscription } from '@/utils/calendar-utils';
+import useFullyFlow from '@/components/FullyFlow/FullyFlow.hooks';
+import { subscribeByEmail } from '@/utils/api-utils';
 
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { themeState } from '@/states/themeState';
@@ -58,7 +58,7 @@ export default function Index() {
       </InputContainer>
       <Button width="100%" onClick={() => {
         if (validateEmail(inputEmail) && selectedCalendarOption) {
-          requestEmailSubscription(inputEmail, selectedCalendarOption.code)
+          subscribeByEmail(inputEmail, selectedCalendarOption.code)
             .catch((e) => {
               console.error(e);
             })

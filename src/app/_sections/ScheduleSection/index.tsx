@@ -1,5 +1,5 @@
 import React from 'react';
-import useFullyFlow from '@/components/common/FullyFlow/FullyFlow.hooks';
+import useFullyFlow from '@/components/FullyFlow/FullyFlow.hooks';
 import { useRecoilState } from 'recoil';
 import { selectedCalendarOptionState } from '@/states/calendarState';
 

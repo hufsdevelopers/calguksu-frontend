@@ -1,5 +1,5 @@
-import useFullyFlow from '@/components/common/FullyFlow/FullyFlow.hooks';
-import { requestEmailSubscription } from '@/utils/calendar-utils';
+import useFullyFlow from '@/components/FullyFlow/FullyFlow.hooks';
+import { subscribeByEmail } from '@/utils/api-utils';
 
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { agreedPrivacyPolicyState, inputEmailState, selectedCalendarOptionState } from '@/states/calendarState';
@@ -37,7 +37,7 @@ export default function CompleteSection() {
         </CompleteText>
         <SectionComment style={{ marginTop: 0 }}>메일함에서 찾을수 없나요? 다시 보내려면&nbsp;
           <SectionCommentHighlight onClick={() => {
-            requestEmailSubscription(inputEmail, selectedCalendarOption?.code).then(r => {
+            subscribeByEmail(inputEmail, selectedCalendarOption?.code).then(r => {
             });
           }}>이곳</SectionCommentHighlight>을 클릭하세요.</SectionComment>
       </SectionContentColumn>

@@ -4,10 +4,11 @@ import { InputBlock, InputContainer, InputLabel } from '@/components/common/Inpu
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
   invalid: boolean;
+  backgroundColor?: string;
 }
 
-const Input: React.FC<InputProps> = ({ label, invalid, ...props }) => {
-  return (<InputContainer $invalid={invalid}>
+const Input: React.FC<InputProps> = ({ label, invalid, backgroundColor = 'transparent', ...props }) => {
+  return (<InputContainer $invalid={invalid} style={{ backgroundColor: backgroundColor }}>
     <InputBlock required {...props} />
     <InputLabel $invalid={invalid}>{label}</InputLabel>
   </InputContainer>);

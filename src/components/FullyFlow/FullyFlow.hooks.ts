@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import FullyFlowContext from '@/components/common/FullyFlow/FullyFlow.context';
+import FullyFlowContext from '@/components/FullyFlow/FullyFlow.context';
 
 const useFullyFlow = () => {
   const context = useContext(FullyFlowContext);

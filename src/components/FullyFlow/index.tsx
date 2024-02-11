@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, ReactNode } from 'react';
-import FullyFlowContext from '@/components/common/FullyFlow/FullyFlow.context';
+import FullyFlowContext from '@/components/FullyFlow/FullyFlow.context';
 
 import { ViewportContainer, SectionsContainer } from './FullyFlow.styles';
 

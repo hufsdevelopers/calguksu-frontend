@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { media } from '@/styles/ui.styles';
+import { media } from '@/styles/globals';
 
 export const HeaderContainer = styled.header`
   align-items: center;

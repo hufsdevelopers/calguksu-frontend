@@ -1,5 +1,5 @@
 import React from 'react';
-import { FullyFlowSection as StyledFullyFlowSection } from '@/components/common/FullyFlow/FullyFlow.styles';
+import { FullyFlowSection as StyledFullyFlowSection } from '@/components/FullyFlow/FullyFlow.styles';
 
 interface SectionProps {
   children: React.ReactNode;
