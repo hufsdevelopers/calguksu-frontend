@@ -15,7 +15,8 @@ import { GradientOval } from '@/styles/ui.styles';
 export default function HomePage() {
   useScreenSize();
 
-  return (<>
+  return (
+    <>
       <Header />
       <GradientOval />
       <FullyFlow>

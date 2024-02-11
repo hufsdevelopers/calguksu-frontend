@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { themeState } from '@/states/themeState';
 
@@ -11,10 +11,18 @@ import appConstants from '@/constants/app-constants';
 
 const Header = () => {
   const [theme, setTheme] = useRecoilState(themeState);
+  const [themeIcon, setThemeIcon] = useState<ReactNode>(undefined);
+
+  useEffect(() => {
+    if (theme === 'light') setThemeIcon(<DayIcon width={24} height={24} />);
+    else if (theme === 'dark') setThemeIcon(<NightIcon width={24} height={24} />);
+    else setThemeIcon(undefined);
+  }, [theme]);
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
     window.__onThemeChange(newTheme);
   };
 
@@ -23,9 +31,7 @@ const Header = () => {
       <LogoIcon width={24} height={24} fill="#2A7CE8" />
       {appConstants.titleEng}
     </HeaderBrandingBlock>
-    <ThemeController onClick={toggleTheme}>
-      {theme === 'light' ? <NightIcon width={24} height={24} /> : <DayIcon width={24} height={24} />}
-    </ThemeController>
+    <ThemeController onClick={toggleTheme}>{themeIcon}</ThemeController>
   </HeaderContainer>;
 };
 
