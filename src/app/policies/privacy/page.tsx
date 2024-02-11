@@ -1,15 +1,15 @@
 'use client';
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import { PolicyLayout, PolicyContent, PolicyTitle } from '@/styles/policy.styles';
 
-export default function PrivacyPage() {
+export default function PrivacyPage(): ReactElement {
   return <PolicyLayout>
     <PolicyTitle>Calguksu 개인정보 처리방침</PolicyTitle>
     <PolicyContent style={{ marginTop: '42px' }}>
       <strong>1. 개인정보의 처리 목적</strong><br /><br />
       CALGUKSU(calguksu.com)서비스는 훕스디벨로퍼스(hufsdevelopers,&nbsp;
-      <a href='https://hufsdevelopers.org' target='_blank'>https://hufsdevelopers.org</a>)
+      <a href="https://hufsdevelopers.org" target="_blank">https://hufsdevelopers.org</a>)
       &nbsp;이하 &quot;훕스디벨로퍼스&quot;에서 운영하는 서비스입니다. 우리는 다음의 목적을 위하여 개인정보를 처리하고 있으며, 다음의 목적 이외의 용도로는 이용하지 않습니다.<br />
       <li>고객의 캘린더 구독 의사 확인, 구독 자격 유지 및 관리</li>
       <br />
@@ -43,12 +43,12 @@ export default function PrivacyPage() {
       <strong>6. 개인정보 보호책임자 선임 현황</strong><br /><br />
       ① ‘훕스디벨로퍼스’는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고
       있습니다.<br />
-      <li>개인정보 보호책임자 성명 : 김경록, 직책 : 관리자, 직급 : 관리자 연락처 : 010-4684-1248, <a href='mailto:support@hufsdevelopers.org'
-                                                                          target='_blank'>support@hufsdevelopers.org</a><br />
+      <li>개인정보 보호책임자 성명 : 김경록, 직책 : 관리자, 직급 : 관리자 연락처 : 010-4684-1248, <a href="mailto:support@hufsdevelopers.org"
+                                                                          target="_blank">support@hufsdevelopers.org</a><br />
         ※ 개인정보 보호 담당부서로 연결됩니다.
       </li>
       <li>개인정보 보호 담당부서 부서명 : 훕스디벨로퍼스, 개인정보 관리팀담당자 : 김경록, 연락처 : 010-4684-1248, <a
-        href='mailto:support@hufsdevelopers.org' target='_blank'>support@hufsdevelopers.org</a></li>
+        href="mailto:support@hufsdevelopers.org" target="_blank">support@hufsdevelopers.org</a></li>
       ② 정보주체께서는 ‘훕스디벨로퍼스’의 서비스(또는 사업)을 이용하시면서 발생한 모든 개인정보 보호 관련 문의, 불만처리, 피해구제 등에 관한 사항을 개인정보 보호책임자 및 담당부서로 문의하실 수
       있습니다.
       ‘훕스디벨로퍼스’는 정보주체의 문의에 대해 지체 없이 답변 및 처리해드릴 것입니다.

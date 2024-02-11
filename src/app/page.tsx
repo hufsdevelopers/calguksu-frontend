@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import { RecoilRoot } from 'recoil';
 import useScreenSize from '@/hooks/useScreenSize';
 
 import IntroduceSection from '@/app/_sections/IntroSection';
@@ -13,10 +12,10 @@ import FullyFlow from '@/components/common/FullyFlow';
 import FullyFlowSection from '@/components/common/FullyFlow/FullyFlowSection';
 import { GradientOval } from '@/styles/ui.styles';
 
-export default function Home() {
+export default function HomePage() {
   useScreenSize();
 
-  return (<RecoilRoot>
+  return (<>
       <Header />
       <GradientOval />
       <FullyFlow>
@@ -25,6 +24,6 @@ export default function Home() {
         <FullyFlowSection><SubscribeSection /></FullyFlowSection>
         <FullyFlowSection><CompleteSection /></FullyFlowSection>
       </FullyFlow>
-    </RecoilRoot>
+    </>
   );
 }

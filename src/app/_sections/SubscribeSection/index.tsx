@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import useFullyFlow from '@/components/common/FullyFlow/FullyFlow.hooks';
 import { requestEmailSubscription } from '@/utils/calendar-utils';
@@ -25,6 +25,12 @@ export default function Index() {
   const [inputEmail, setInputEmail] = useRecoilState(inputEmailState);
   const [agreedPrivacyPolicy, setAgreedPrivacyPolicy] = useRecoilState(agreedPrivacyPolicyState);
 
+  const [markColor, setMarkColor] = useState('#FFFFFF');
+
+  useEffect(() => {
+    setMarkColor(agreedPrivacyPolicy ? '#FFFFFF' : (theme === undefined || theme == 'light') ? '#FAFAFA' : '#818285');
+  }, [agreedPrivacyPolicy, theme]);
+
   const validateEmail = (email: string): boolean => {
     const re: RegExp = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email.toLowerCase());
@@ -47,8 +53,7 @@ export default function Index() {
         />
         <Checkbox checked={agreedPrivacyPolicy}
                   label="훕스디벨로퍼스의 새로운 소식을 이메일로 받기"
-                  markColor={agreedPrivacyPolicy ? '#FFFFFF'
-                    : theme === 'dark' ? '#818285' : '#FAFAFA'}
+                  markColor={markColor}
                   onClick={() => setAgreedPrivacyPolicy(!agreedPrivacyPolicy)} />
       </InputContainer>
       <Button width="100%" onClick={() => {
