@@ -1,6 +1,6 @@
 import React from 'react';
-import { CalendarOptionType } from '@/types/select-types';
-import { OptionCalendarIcon, OptionCalendarInfo, OptionContainer } from '@/components/common/Select/Select.styles';
+import { CalendarOptionType } from '@/types/calendar-types';
+import { OptionCalendarIcon, OptionCalendarInfo, OptionContainer } from '@/components/CalendarSelect/Select.styles';
 
 interface OptionComponentProps {
   option?: CalendarOptionType;
@@ -8,7 +8,7 @@ interface OptionComponentProps {
   hover?: boolean;
 }
 
-const OptionComponent: React.FC<OptionComponentProps> = ({ option, onClick, hover = true }) => {
+const OptionComponent = ({ option, onClick, hover = true }: OptionComponentProps) => {
   return <OptionContainer onClick={onClick} $hover={hover}>
     <OptionCalendarIcon src={option?.icon} />
     <OptionCalendarInfo>

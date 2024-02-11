@@ -1,14 +1,15 @@
 import React from 'react';
 import useFullyFlow from '@/components/common/FullyFlow/FullyFlow.hooks';
-import useInputContext from '@/hooks/useInputContext';
+import { useRecoilState } from 'recoil';
+import { selectedCalendarOptionState } from '@/states/calendarState';
 
 import Button from '@/components/common/Button';
-import Select from '@/components/common/Select';
+import CalendarSelect from '../../../components/CalendarSelect';
 import {
   SectionComment, SectionCommentHighlight, SectionContentColumn, SectionContentTitle, SectionInnerContainer,
 } from '@/styles/ui.styles';
 
-import { CalendarOptionType } from '@/types/select-types';
+import { CalendarOptionType } from '@/types/calendar-types';
 
 const options: CalendarOptionType[] = [
   {
@@ -33,7 +34,7 @@ const options: CalendarOptionType[] = [
 
 export default function IntroduceSection() {
   const { moveDown } = useFullyFlow();
-  const { selectedCalendar, setSelectedCalendar } = useInputContext();
+  const [selectedCalendarOption, setSelectedCalendarOption] = useRecoilState(selectedCalendarOptionState);
 
   return <SectionInnerContainer>
     <SectionContentColumn>
@@ -41,10 +42,10 @@ export default function IntroduceSection() {
         <p>🛒</p>
         <p>일정을 골라요</p>
       </SectionContentTitle>
-      <Select options={options} selected={selectedCalendar?.code || null} onSelect={setSelectedCalendar} />
-      <Button width='100%' onClick={() => {
-        if (selectedCalendar) moveDown();
-      }} aria-invalid={!selectedCalendar}>선택</Button>
+      <CalendarSelect options={options} selected={selectedCalendarOption?.code || null} onSelect={setSelectedCalendarOption} />
+      <Button width="100%" onClick={() => {
+        if (selectedCalendarOption) moveDown();
+      }} aria-invalid={!selectedCalendarOption}>선택</Button>
       <SectionComment>찾고있는 학교가 없다면 <SectionCommentHighlight>이쪽</SectionCommentHighlight>에서
         신청하세요.</SectionComment>
     </SectionContentColumn>

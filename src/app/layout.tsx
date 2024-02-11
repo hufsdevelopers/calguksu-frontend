@@ -1,6 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import StyledComponentsRegistry from '@/lib/registry';
+import RecoilStyledProvider from '@/states/RecoilStyledProvider';
 
 import '@/styles/reset.css';
 import '@/styles/color-schemes.css';
@@ -48,8 +48,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
   return (
     <>
-      <html lang='ko'>
-      <body className='light' suppressHydrationWarning={true}>
+      <html lang="ko">
+      <body suppressHydrationWarning={true}>
       <script dangerouslySetInnerHTML={{
         __html: `(function() {
                     let preferredTheme;
@@ -81,9 +81,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     })();
                   `,
       }} />
-      <StyledComponentsRegistry>
+      <RecoilStyledProvider>
         {children}
-      </StyledComponentsRegistry>
+      </RecoilStyledProvider>
       </body>
       </html>
     </>

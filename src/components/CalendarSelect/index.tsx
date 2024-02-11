@@ -1,17 +1,17 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 
-import { Dropdown, Placeholder, SelectContainer } from '@/components/common/Select/Select.styles';
-import { CalendarOptionType } from '@/types/select-types';
-import OptionComponent from '@/components/common/Select/OptionComponent';
+import { Dropdown, Placeholder, SelectContainer } from '@/components/CalendarSelect/Select.styles';
+import { CalendarOptionType } from '@/types/calendar-types';
+import OptionComponent from '@/components/CalendarSelect/OptionComponent';
 import { ArrowDownRadioIcon, ArrowUpRadioIcon } from '@/components/common/icon/arrow-radio-icon';
 
-interface CustomSelectProps {
+interface CalendarSelectProps {
   options: CalendarOptionType[];
   selected: string | null;
   onSelect: (value: CalendarOptionType) => void;
 }
 
-const Select: React.FC<CustomSelectProps> = ({ options, selected, onSelect }) => {
+const CalendarSelect = ({ options, selected, onSelect }: CalendarSelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const selectRef = useRef<HTMLDivElement | null>(null);
 
@@ -44,8 +44,8 @@ const Select: React.FC<CustomSelectProps> = ({ options, selected, onSelect }) =>
             onClick={() => undefined}
             hover={false} />
           : <span>선택하세요</span>}
-        {isOpen ? <ArrowUpRadioIcon width={10} height={7} fill='#828689' />
-          : <ArrowDownRadioIcon width={10} height={7} fill='#828689' />}
+        {isOpen ? <ArrowUpRadioIcon width={10} height={7} fill="#828689" />
+          : <ArrowDownRadioIcon width={10} height={7} fill="#828689" />}
       </Placeholder>
       <Dropdown $isOpen={isOpen}>
         {options.map((option) => (
@@ -59,4 +59,4 @@ const Select: React.FC<CustomSelectProps> = ({ options, selected, onSelect }) =>
   );
 };
 
-export default Select;
+export default CalendarSelect;
