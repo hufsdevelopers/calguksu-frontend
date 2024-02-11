@@ -1,6 +1,6 @@
 import {
   TombstoneIcon, TombstoneBlock, TombstoneSubtitle, TombstoneTitle,
-} from '@/components/common/Tombstone/Tombstone.styles';
+} from '@/components/Tombstone/Tombstone.styles';
 
 interface TombstoneProps {
   title?: string;

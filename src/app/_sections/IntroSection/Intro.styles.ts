@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { media } from '@/styles/ui.styles';
 
 export const IntroImageBlock = styled.div`
