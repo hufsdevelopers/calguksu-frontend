@@ -2,7 +2,7 @@ import React from 'react';
 import {
   CheckboxContainer, CheckboxLabel, HiddenCheckbox, StyledCheckbox,
 } from '@/components/common/Checkbox/Checkbox.styles';
-import CheckmarkIcon from '@/components/common/icon/checkmark-icon';
+import CheckmarkIcon from '@/components/ui/Icon/checkmark-icon';
 
 interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;

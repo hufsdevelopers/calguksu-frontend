@@ -2,8 +2,8 @@
 import { ReactElement, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Modal from '@/components/common/Modal';
-import Header from '@/components/Header';
-import FeedbackModal from '@/app/_components/FeedbackModal';
+import Header from '../../components/layout/Header';
+import FeedbackModal from '../../components/common/Modal/FeedbackModal';
 
 export default function SubscriptionPage(): ReactElement {
   const searchParams = useSearchParams();

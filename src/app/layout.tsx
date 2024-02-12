@@ -1,6 +1,8 @@
 import React from 'react';
 import { Metadata } from 'next';
-import RecoilStyledProvider from '@/states/RecoilStyledProvider';
+
+import AppRecoilStyledWrapper from '@/states/AppRecoilStyledWrapper';
+import AppModalProvider from '@/states/AppModalProvider';
 
 import '@/styles/reset.css';
 import '@/styles/color-schemes.css';
@@ -17,9 +19,9 @@ export const metadata: Metadata = {
   title: appConstants.title,
   description: appConstants.description,
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-icon.png',
-    shortcut: 'icon.png',
+    icon: '/static/branding/favicon.ico',
+    apple: '/static/branding/apple-icon.png',
+    shortcut: '/static/branding/icon.png',
   },
   openGraph: {
     title: appConstants.title,
@@ -28,6 +30,7 @@ export const metadata: Metadata = {
     siteName: appConstants.titleEng,
     locale: appConstants.locale,
     type: 'website',
+    images: ['/static/branding/preview.png'],
   },
   robots: {
     index: true,
@@ -45,7 +48,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
-
   return (
     <>
       <html lang="ko">
@@ -81,9 +83,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     })();
                   `,
       }} />
-      <RecoilStyledProvider>
-        {children}
-      </RecoilStyledProvider>
+      <AppRecoilStyledWrapper>
+        <AppModalProvider>
+          {children}
+        </AppModalProvider>
+      </AppRecoilStyledWrapper>
       </body>
       </html>
     </>

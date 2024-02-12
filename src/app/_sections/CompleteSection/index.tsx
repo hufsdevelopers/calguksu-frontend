@@ -1,10 +1,10 @@
-import useFullyFlow from '@/components/FullyFlow/FullyFlow.hooks';
+import useFullyFlow from '@/components/ui/FullyFlow/FullyFlow.hooks';
 import { subscribeByEmail } from '@/utils/api-utils';
 
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { agreedPrivacyPolicyState, inputEmailState, selectedCalendarOptionState } from '@/states/calendarState';
 
-import Tombstone from '../../../components/Tombstone';
+import Tombstone from '../../../components/ui/Tombstone';
 import {
   SectionComment, SectionCommentHighlight, SectionContentColumn, SectionContentTitle, SectionInnerContainer,
 } from '@/styles/ui.styles';

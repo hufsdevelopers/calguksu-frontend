@@ -6,7 +6,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   width?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, width = 'fit-content', ...props }) => {
+const Button = ({ children, width = 'fit-content', ...props }: ButtonProps) => {
   return <ButtonBlock $width={width} {...props}>{children}</ButtonBlock>;
 };
 

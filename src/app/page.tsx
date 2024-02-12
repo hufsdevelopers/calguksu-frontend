@@ -7,9 +7,9 @@ import ScheduleSection from '@/app/_sections/ScheduleSection';
 import SubscribeSection from '@/app/_sections/SubscribeSection';
 import CompleteSection from '@/app/_sections/CompleteSection';
 
-import Header from '@/components/Header';
-import FullyFlow from '../components/FullyFlow';
-import FullyFlowSection from '@/components/FullyFlow/FullyFlowSection';
+import Header from '../components/layout/Header';
+import FullyFlow from '../components/ui/FullyFlow';
+import FullyFlowSection from '@/components/ui/FullyFlow/FullyFlowSection';
 import { GradientOval } from '@/styles/ui.styles';
 
 export default function HomePage() {

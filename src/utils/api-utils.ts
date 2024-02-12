@@ -11,6 +11,6 @@ export const subscribeByEmail = async (email: string, calendarName: string): Pro
 };
 
 export const submitFeedback = async (replyEmail: string, content: string): Promise<void> => {
-  const response = await apiClient.post('feedback', { email: replyEmail, text: content });
+  const response = await apiClient.post('feedback', { replyEmail, content });
   return response.data;
 };
