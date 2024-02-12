@@ -35,6 +35,7 @@ export const ModalBox = styled(motion.div)`
 
 
 export const ModalContainer = styled.div`
+    position: relative;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -93,4 +94,14 @@ export const ModalCloseButton = styled(ButtonBlock)`
     &:hover {
         background-color: transparent;
     }
+`;
+
+export const FixedModalSection = styled.div`
+    position: fixed;
+    display: flex;
+    width: calc(100% - ${rem(24 * 2)});
+    max-width: ${rem(756)};
+    justify-content: flex-end;
+    padding: ${rem(18)};
+    z-index: 2050;
 `;

@@ -1,7 +1,8 @@
-import { ReactNode, useEffect, MouseEvent } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 
 import { AnimatePresence } from 'framer-motion';
-import { Backdrop, ModalBox } from '@/components/common/Modal/Modal.styles';
+import { Backdrop, FixedModalSection, ModalBox } from '@/components/common/Modal/Modal.styles';
+import CloseIcon from '@/components/ui/Icon/close-icon';
 
 interface ModalProps {
   isOpen: boolean;
@@ -9,6 +10,7 @@ interface ModalProps {
   children: ReactNode;
   disableBackdropClick?: boolean;
   disableEscapeKeyDown?: boolean;
+  enableFixedCloseButton?: boolean;
 }
 
 const backdropVariants = {
@@ -27,6 +29,7 @@ const Modal = ({
                  children,
                  disableBackdropClick = false,
                  disableEscapeKeyDown = false,
+                 enableFixedCloseButton = false,
                }: ModalProps) => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -60,6 +63,11 @@ const Modal = ({
             exit="hidden"
             onClick={(e) => e.stopPropagation()}
           >
+            {enableFixedCloseButton && (
+              <FixedModalSection>
+                <button onClick={onClose}><CloseIcon width={32} height={32} stroke="#62798C" /></button>
+              </FixedModalSection>
+            )}
             {children}
           </ModalBox>
         </Backdrop>

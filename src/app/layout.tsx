@@ -52,37 +52,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <>
       <html lang="ko">
       <body suppressHydrationWarning={true}>
-      <script dangerouslySetInnerHTML={{
-        __html: `(function() {
-                    let preferredTheme;
-                    window.__onThemeChange = function setTheme(newTheme) {
-                      window.__theme = newTheme;
-                      preferredTheme = newTheme;
-                      document.body.className = newTheme;
-                    };
-                  
-                    try {
-                      preferredTheme = localStorage.getItem('theme');
-                    } catch (err) {
-                    }
-                  
-                    window.__setPreferredTheme = function(newTheme) {
-                      window.__onThemeChange(newTheme);
-                      try {
-                        localStorage.setItem('theme', newTheme);
-                      } catch (err) {
-                      }
-                    };
-                  
-                    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-                    darkQuery.addListener(function(e) {
-                      window.__setPreferredTheme(e.matches ? 'dark' : 'light');
-                    });
-                  
-                    window.__onThemeChange(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
-                    })();
-                  `,
-      }} />
       <AppRecoilStyledWrapper>
         <AppModalProvider>
           {children}

@@ -1,4 +1,3 @@
-import useFullyFlow from '@/components/ui/FullyFlow/FullyFlow.hooks';
 import { subscribeByEmail } from '@/utils/api-utils';
 
 import { useRecoilState, useSetRecoilState } from 'recoil';
@@ -12,7 +11,6 @@ import { CompleteInnerHighlight, CompleteText } from '@/app/_sections/CompleteSe
 import NavigationButton from '@/components/common/Button/NavigationButton';
 
 export default function CompleteSection() {
-  const { moveToTop } = useFullyFlow();
 
   const [selectedCalendarOption, setSelectedCalendarOption] = useRecoilState(selectedCalendarOptionState);
   const [inputEmail, setInputEmail] = useRecoilState(inputEmailState);
@@ -44,7 +42,7 @@ export default function CompleteSection() {
       : <>
         <Tombstone title="오류" subtitle="일시적인 문제가 발생했어요" />
         <NavigationButton style={{ marginTop: '24px' }} onClick={() => {
-          moveToTop();
+          undefined;
           ResetInputContext();
         }}>처음으로 돌아가기</NavigationButton>
       </>}
