@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   title: appConstants.title,
   description: appConstants.description,
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-icon.png',
-    shortcut: 'icon.png',
+    icon: '/static/logos/favicon.ico',
+    apple: '/static/logos/apple-icon.png',
+    shortcut: '/static/logos/icon.png',
   },
   openGraph: {
     title: appConstants.title,
@@ -45,46 +45,12 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
-
   return (
     <>
       <html lang="ko">
-      <body suppressHydrationWarning={true}>
-      <script dangerouslySetInnerHTML={{
-        __html: `(function() {
-                    let preferredTheme;
-                    window.__onThemeChange = function setTheme(newTheme) {
-                      window.__theme = newTheme;
-                      preferredTheme = newTheme;
-                      document.body.className = newTheme;
-                    };
-                  
-                    try {
-                      preferredTheme = localStorage.getItem('theme');
-                    } catch (err) {
-                    }
-                  
-                    window.__setPreferredTheme = function(newTheme) {
-                      window.__onThemeChange(newTheme);
-                      try {
-                        localStorage.setItem('theme', newTheme);
-                      } catch (err) {
-                      }
-                    };
-                  
-                    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-                    darkQuery.addListener(function(e) {
-                      window.__setPreferredTheme(e.matches ? 'dark' : 'light');
-                    });
-                  
-                    window.__onThemeChange(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
-                    })();
-                  `,
-      }} />
-      <RecoilStyledProvider>
-        {children}
-      </RecoilStyledProvider>
-      </body>
+        <body className="dark" suppressHydrationWarning={true}>
+          <RecoilStyledProvider>{children}</RecoilStyledProvider>
+        </body>
       </html>
     </>
   );
