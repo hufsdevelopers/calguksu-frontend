@@ -7,7 +7,7 @@ export async function requestEmailSubscription(
   calendarName: string,
   subscribeNewsletter: boolean,
 ): Promise<SubscribeType> {
-  const axiosResponse = await axios.post<SubscribeType>('https://api.calguksu.com/subscribe', {
+  const axiosResponse = await axios.post<SubscribeType>('/api/subscribe', {
     email,
     calendarName,
     subscribeNewsletter,

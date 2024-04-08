@@ -61,13 +61,9 @@ const GoogleCalendarGuide = ({ cn, ct, calendarChangeToggle }: GoogleCalendarGui
           </GuideCalendarLink>
         </GuideContent>
 
-        <GuideSubtitle>❸ 좌측 “다른 캘린더” + 버튼 메뉴에서 URL로 추가</GuideSubtitle>
-        <GuideVideo controls>
-          <source
-            src="https://firebasestorage.googleapis.com/v0/b/calendarguksu.appspot.com/o/calendar-google-guide.mp4?alt=media&token=9a9aa26a-9c29-4fbe-b612-e22fd30b7707"
-            type="video/mp4"
-          />
-        </GuideVideo>
+        <GuideSubtitle>❸ URL로 추가</GuideSubtitle>
+        <GuideContent>모바일이라면 `구글 캘린더 바로가기` 버튼을 꾹 눌러 새 탭으로 열어주세요.</GuideContent>
+
         <GuideSubtitle>❹ 복사한 링크 붙여넣기</GuideSubtitle>
       </GuideSection>
     </ContentInnerSection>
