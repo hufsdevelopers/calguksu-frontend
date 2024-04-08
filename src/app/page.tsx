@@ -17,7 +17,7 @@ export default function HomePage() {
 
   return (<>
       <Header />
-      <GradientOval />
+      {/*<GradientOval />*/}
       <FullyFlow>
         <FullyFlowSection><IntroduceSection /></FullyFlowSection>
         <FullyFlowSection><ScheduleSection /></FullyFlowSection>

@@ -13,6 +13,8 @@ import {
   ContentInnerSection,
 } from '@/app/subscription/page.styles';
 import Button from '@/components/common/Button';
+import styled from 'styled-components';
+import { media } from '@/styles/ui.styles';
 
 interface GoogleCalendarGuideProps {
   cn: string;
@@ -36,11 +38,7 @@ const GoogleCalendarGuide = ({ cn, ct, calendarChangeToggle }: GoogleCalendarGui
     <ContentInnerSection>
       <IntroduceButton>마지막 단계에요</IntroduceButton>
       <CalendarTitle>구글 캘린더에 추가</CalendarTitle>
-      <CalendarSubtitle>
-        주문한 일정을 캘린더에 추가할 수 있는 링크를 생성했어요.
-        <br />
-        아래의 버튼으로 캘린더 앱에 붙여넣을 수 있는 링크를 복사하세요.
-      </CalendarSubtitle>
+      <GoogleCalendarSubtitle />
       <Button style={{ marginTop: '80px', width: '100%' }} onClick={copyToClipboard}>
         캘린더 링크 복사
       </Button>
@@ -71,3 +69,15 @@ const GoogleCalendarGuide = ({ cn, ct, calendarChangeToggle }: GoogleCalendarGui
 };
 
 export default GoogleCalendarGuide;
+
+const GoogleCalendarSubtitle = styled(CalendarSubtitle)`
+  &::after {
+    content: '주문한 일정을 캘린더에 추가할 수 있는\\A링크를 생성했어요.\\A캘린더 링크를 복사해 구글 캘린더에\\A링크를 붙여넣으세요.';
+  }
+
+  ${media.laptop`      
+    &::after {
+      content: '주문한 일정을 캘린더에 추가할 수 있는 링크를 생성했어요.\\A캘린더 링크를 복사해 구글 캘린더에 링크를 붙여넣으세요.';
+    }
+  `}
+`;

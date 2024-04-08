@@ -19,9 +19,7 @@ const AppleCalendarGuide = ({ cn, ct, calendarChangeToggle }: AppleCalendarGuide
       <IntroduceButton>마지막 단계에요</IntroduceButton>
       <CalendarTitle>내 캘린더 앱에 추가</CalendarTitle>
       <CalendarSubtitle>
-        주문한 일정을 캘린더에 추가할 수 있는 링크를 생성했어요.
-        <br />
-        아래의 캘린더 앱에서 열기 버튼을 누르면 추가할 수 있어요.
+
       </CalendarSubtitle>
       <a
         style={{ width: '100%', maxWidth: '393px' }}

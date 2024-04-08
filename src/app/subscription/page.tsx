@@ -35,11 +35,11 @@ export default function SubscriptionPage(): ReactElement {
   return (
     <>
       <Header />
-      <ContentSection>
+      <ContentSection style={{ justifyContent: isAppleDevice ? 'center' : 'start' }}>
         {isAppleDevice ? (
           <AppleCalendarGuide cn={cn} ct={ct} calendarChangeToggle={calendarChangeToggle} />
         ) : (
-          <GoogleCalendarGuide cn={cn} ct={ct} calendarChangeToggle={calendarChangeToggle}/>
+          <GoogleCalendarGuide cn={cn} ct={ct} calendarChangeToggle={calendarChangeToggle} />
         )}
       </ContentSection>
     </>

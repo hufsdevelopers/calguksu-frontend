@@ -41,7 +41,8 @@ body {
     &.light {
         --calguksu-background-color: var(--calguksu-colors-white);
         --calguksu-main-text: var(--calguksu-colors-primary-900);
-        --calguksu-main-image: url("/static/assets/image-sample-calendar-day.png");
+        --calguksu-main-image: url("/static/assets/image-intro-desktop.svg");
+        --calguksu-main-mobile-image: url("/static/assets/image-intro-mobile.svg");
         --calguksu-main-gradient: none;
         --calguksu-colors-blue-invalid: var(--calguksu-colors-blue-100);
         --calguksu-colors-blue-invalid-text: var(--calguksu-colors-white);
@@ -60,7 +61,8 @@ body {
     &.dark {
         --calguksu-background-color: var(--calguksu-colors-primary-900);
         --calguksu-main-text: var(--calguksu-colors-white);
-        --calguksu-main-image: url("/static/assets/image-sample-calendar.png");
+        --calguksu-main-image: url("/static/assets/image-intro-desktop.svg");
+        --calguksu-main-mobile-image: url("/static/assets/image-intro-mobile.svg");
         --calguksu-main-gradient: radial-gradient(52.22% 52.22% at 49.98% 47.78%, #2A7CE8 0%, rgba(42, 124, 232, 0.00) 100%);
         --calguksu-colors-blue-invalid: var(--calguksu-colors-blue-900);
         --calguksu-colors-blue-invalid-text: var(--calguksu-colors-gray-700);

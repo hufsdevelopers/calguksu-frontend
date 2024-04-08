@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import { media } from '@/styles/ui.styles';
 
 export const ContentSection = styled.div`
-  padding: 96px 24px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
-
-  ${media.laptop`
-   padding: 120px 24px;
-  `}
+  height: 100%;
 `;
 
 export const ContentInnerSection = styled.section`
@@ -15,6 +15,12 @@ export const ContentInnerSection = styled.section`
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+  padding: 96px 24px 56px 24px;
+
+  ${media.laptop`
+   padding: 120px 24px;
+  `}
 `;
 
 export const IntroduceButton = styled.span`
@@ -49,13 +55,22 @@ export const CalendarSubtitle = styled.p`
   margin-top: 15px;
   color: #62798c;
   font-size: 17px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 30px;
   text-align: center;
   word-break: keep-all;
+  white-space: pre;
+
+  &::after {
+    content: '주문한 일정을 캘린더에 추가할 수 있는\\A링크를 생성했어요.\\A아래의 캘린더 앱에서 열기 버튼을\\A누르면 추가할 수 있어요.';
+  }
 
   ${media.laptop`
-   font-size: 19px;
+      font-size: 19px;
+      
+      &::after {
+        content: '주문한 일정을 캘린더에 추가할 수 있는 링크를 생성했어요.\\A아래의 캘린더 앱에서 열기 버튼을 누르면 추가할 수 있어요.';
+      }
   `}
 `;
 
