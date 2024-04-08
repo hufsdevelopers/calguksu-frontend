@@ -11,7 +11,7 @@ import GoogleCalendarGuide from '@/app/subscription/_sections/GoogleCalendarGuid
 export default function SubscriptionPage(): ReactElement {
   const searchParams = useSearchParams();
 
-  const [isAppleDevice, setIsAppleDevice] = useState<boolean | undefined>(undefined);
+  const [isAppleDevice, setIsAppleDevice] = useState<boolean | undefined>(true);
 
   const cn = searchParams.get('cn');
   const ct = searchParams.get('ct');
@@ -22,6 +22,7 @@ export default function SubscriptionPage(): ReactElement {
       const osName = result.os.name;
 
       if (osName === 'iOS' || osName === 'Mac OS') setIsAppleDevice(true);
+      else setIsAppleDevice(false);
     }
   }, []);
 
