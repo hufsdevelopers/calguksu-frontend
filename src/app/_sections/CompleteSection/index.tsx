@@ -37,7 +37,7 @@ export default function CompleteSection() {
             <p>다 됐어요</p>
           </SectionContentTitle>
           <CompleteText>
-            <CompleteInnerHighlight>haklee.googl@gmail.com</CompleteInnerHighlight>로 주문 하신
+            <CompleteInnerHighlight>{inputEmail}</CompleteInnerHighlight>로 주문 하신
             <br />
             {selectedCalendarOption.name} {selectedCalendarOption.type}을 배달했어요
           </CompleteText>
