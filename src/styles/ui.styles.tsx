@@ -73,7 +73,7 @@ export const SectionComment = styled.p`
   word-break: keep-all;
 `;
 
-export const SectionCommentHighlight = styled.span`
+export const SectionCommentHighlight = styled.a`
   color: var(--calguksu-text-comment-link);
   font-size: 13px;
   font-weight: 500;
