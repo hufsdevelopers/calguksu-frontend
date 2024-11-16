@@ -2,7 +2,7 @@
 
 ![Netlify](https://img.shields.io/netlify/e9e2a837-1768-477c-80e2-9987cf411c84)
 
-<img src="./static/assets/preview.png" width="100%" height="auto" alt="Preview"/>
+<img src="https://calguksu.com/static/assets/preview.png" width="100%" height="auto" alt="Preview"/>
 
 **Calguksu.com** is a calendar subscription service that allows you to seamlessly integrate schedules into any calendar
 that supports iCal subscriptions. By registering your schedule on Calguksu.com and sharing it with others, you can
@@ -46,3 +46,33 @@ greatly enhance group schedule management and collaboration.
   </tr>
 </table>
 
+## Getting Started
+
+1. Clone the repository:
+
+```bash
+   git clone https://github.com/hufsdevelopers/calguksu-frontend.git
+```
+
+2. Install the dependencies:
+
+if you are not installed [yarn](https://yarnpkg.com/), install it first: `npm install -g yarn`
+
+```bash
+   yarn install
+```
+
+3. Start the development server:
+
+```bash
+  yarn dev
+```
+
+## License
+
+This project is distributed under the MIT License. For more information, see the [LICENSE](./LICENSE) file.
+
+## Contact
+
+If you have any questions, feel free to reach out via [Issues](https://github.com/hufsdevelopers/calguksu-frontend/issues) or
+contact me directly at [me@haklee.me](mailto:me@haklee.me).
