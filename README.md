@@ -1,2 +1,4 @@
 # Calguksu
-캘린더 구독 서비스
+
+<img src="https://calguksu.com/static/assets/preview.png" width="100%" height="auto" alt="Preview"/>
+
