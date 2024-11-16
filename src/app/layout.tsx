@@ -28,6 +28,26 @@ export const metadata: Metadata = {
     siteName: appConstants.titleEng,
     locale: appConstants.locale,
     type: 'website',
+    images: [
+      {
+        url: '/static/assets/preview.png',
+        width: 1200,
+        height: 630,
+        alt: appConstants.title,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: appConstants.title,
+    description: appConstants.description,
+    images: [
+      {
+        url: '/static/assets/preview.png',
+        alt: appConstants.title,
+      },
+    ],
+    site: '@hufsdevelopers',
   },
   robots: {
     index: true,
@@ -48,9 +68,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang="ko">
-        <body className="dark" suppressHydrationWarning={true}>
-          <RecoilStyledProvider>{children}</RecoilStyledProvider>
-        </body>
+      <body className="dark" suppressHydrationWarning={true}>
+      <RecoilStyledProvider>{children}</RecoilStyledProvider>
+      </body>
       </html>
     </>
   );
